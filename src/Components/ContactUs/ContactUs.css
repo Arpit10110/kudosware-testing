@@ -1,0 +1,70 @@
+.ContactUs{
+    padding-bottom: 10rem;
+}
+.ContactUs h2{
+    text-align: center;
+    font-size: 4rem;
+}
+.contact-div{
+    display: flex;
+    padding-left: 5rem;
+    background-color: #7FBCB40F;
+    padding-right: 5rem;
+    justify-content: space-evenly;
+    margin-top: 8rem;
+}
+.contactbox{
+    display: flex;
+    width: 40%;
+    padding: 5rem;
+    flex-direction: column;
+    gap: 2rem;
+}
+.row1{
+    display: flex;
+    gap: 3rem;
+}
+.Input h3{
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+.Input{
+    width: 46%;
+}
+.Input input {
+    margin-top: 0.4rem;
+    width: 100%;
+    font-size: 2rem;
+}
+.Message{
+    width: 82%;
+}
+.Message h3{
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+.Message input {
+    margin-top: 0.4rem;
+    width: 100%;
+    height: 20vh;
+    padding: 0rem 4rem 1rem 4rem;
+}
+.contactImg{
+    width: 40%;
+}
+.contactImg img{
+    width: 100%;
+}
+.contactbtn{
+        margin: auto;
+        margin-top: 2rem;
+        width: 100%;
+}
+.contactbtn button {
+    background-color: #FCEBA3;
+    font-size: 1.7rem;
+    border-radius: 14px;
+    padding: 1rem 8rem 1rem 8rem;
+    border: none;
+    width: 100%;
+}

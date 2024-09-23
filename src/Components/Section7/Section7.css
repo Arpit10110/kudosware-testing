@@ -1,0 +1,29 @@
+.section7{
+    padding-bottom: 10rem;
+}
+.section7 h2 {
+    margin-left: 5rem;
+    font-size: 4rem;
+    font-weight: 400;
+    border-bottom: 4px solid #EBB5BB;
+    width: fit-content;
+    border-radius: 1px;
+}
+.section7Img{
+    margin-top: 8rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    display: flex;
+    justify-content: space-between;
+}
+.section7Img Img{
+    width: 10%;
+    object-fit: contain;
+    object-position: center;
+}
+.section7Img :nth-child(1){
+    width: 15%;
+}
+.section7Img :nth-child(5){
+    width: 20%;
+}

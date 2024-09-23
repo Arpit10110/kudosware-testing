@@ -1,0 +1,52 @@
+.section8{
+    padding-bottom: 10rem;
+    overflow: hidden;
+}
+.section8 h2 {
+    margin-left: 5rem;
+    font-size: 4rem;
+    font-weight: 400;
+    border-bottom: 4px solid #EBB5BB;
+    width: fit-content;
+    border-radius: 1px;
+}
+.secbox{
+    display: flex;
+    width: 45%;
+    gap: 1rem;
+    background-color: white;
+    padding: 1rem;
+    margin: auto;
+    margin-bottom: 3rem;
+    border-radius: 1rem;
+}
+.secbox img{
+    width: 30% !important;
+}
+.sec8cont{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+    gap: 1rem;
+    font-size: 1.2rem;
+    width: 70%;
+}
+.sec8cont p{
+    text-align: start;
+}
+.sliderIntro{
+    background-color: #F776841A;
+    margin-top: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem;
+}
+.groupsecbox{
+    display: flex;
+    flex-direction: row;
+    gap: 5rem;
+    width: 70%;
+    margin: auto;
+}

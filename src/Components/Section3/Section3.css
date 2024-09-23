@@ -1,0 +1,81 @@
+.section3{
+    padding-bottom: 10rem;
+}
+.section3 h2 {
+    margin-left: 5rem;
+    font-size: 4rem;
+    font-weight: 400;
+    border-bottom: 4px solid #EBB5BB;
+    width: fit-content;
+    border-radius: 1px;
+}
+.section3-Img{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+}
+.section3-Img img{
+    width: 80%;
+}
+.section3-ContBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    margin-top: 8rem;
+}
+.sec3box{
+    width: 20%;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    gap: 2rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    align-items: center;
+}
+.sec3box-img{
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sec3box-img img{
+    width: 100%;
+}
+.secbox-cont{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    font-size: 2rem;
+    gap: 2rem;
+}
+.secbox-cont p{
+    text-align: center;
+    font-weight: 300;
+    font-size: 1.8rem;
+}
+.sec3btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8rem;
+}
+.sec3btn button{
+    background-color: #147AA9;
+    color: white;
+    padding: 1rem;
+    font-size: 3rem;
+    border-radius: 10px;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    margin: auto;
+    position: relative;
+    font-weight: 500;
+    border: none;
+}

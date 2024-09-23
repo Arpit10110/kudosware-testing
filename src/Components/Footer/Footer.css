@@ -1,0 +1,33 @@
+footer{
+    background-color: #1A95CF40;
+}
+.footer-div{
+    display: flex;
+    justify-content: space-between;
+    padding-right: 10rem;
+}
+.footerImg{
+    width: 25%;
+}
+.footerImg img{
+    width: 100%;
+}
+.footerCont{
+    display: flex;
+    gap: 10rem;
+    margin-top: 4rem;
+    width: 40%;
+    position: relative;
+}
+.footercont1{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    font-size: 1.3rem;
+}
+.footerCont h6{
+    position: absolute;
+    bottom: 4rem;
+    font-size: 1.1rem;
+    font-weight: 400;
+}
