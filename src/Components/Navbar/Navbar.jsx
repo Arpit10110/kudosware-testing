@@ -25,7 +25,7 @@ const Navbar = () => {
       <HashLink to="/#contact">Contact Us</HashLink>
     </div>
     <div className="lastnav-link">
-      <Link>Login/Sign Up</Link>
+      <NavLink to="/login" >Login/Sign Up</NavLink>
     </div>
    </nav>
    </>

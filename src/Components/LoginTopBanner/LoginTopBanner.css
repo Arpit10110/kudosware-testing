@@ -1,0 +1,33 @@
+.logintop-banner{
+    width: 100%;
+    height: 40vh;
+    position: relative;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+.logintop-banner div{
+    width: fit-content;
+}
+
+.logintop-banner img{
+    height: 40vh;
+    width: 100%;
+    position: absolute;
+    z-index: -5;
+    object-fit: cover;
+    opacity: 40%;
+}
+.logintop-banner h2{
+    font-size: 4rem;
+    border-bottom: 1rem;
+    color: #147AA9;
+    font-weight: 400;
+}
+.logintop-banner h6{
+    background-color: #FC6565;
+    height: 0.5vh;
+    width: 100%;
+}
