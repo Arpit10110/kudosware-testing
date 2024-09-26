@@ -18,14 +18,14 @@ const Navbar = () => {
     </div>
     <div className="midlenav-links">
       <NavLink to="/" >Home</NavLink> 
-      <Link>Why Rent?</Link>
+      <HashLink to="/#rent">Why Rent?</HashLink>
       <NavLink to="/clean-out-closet">Clean Out Closet</NavLink>
       <NavLink to="/about" >About Us</NavLink>
       <Link>Store</Link>
       <HashLink to="/#contact">Contact Us</HashLink>
     </div>
     <div className="lastnav-link">
-      <NavLink to="/login" >Login/Sign Up</NavLink>
+      <Link to="/login" >Login/Sign Up</Link>
     </div>
    </nav>
    </>

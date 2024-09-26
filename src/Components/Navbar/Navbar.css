@@ -35,7 +35,7 @@ nav{
 .midlenav-links a{
     color: #0000007A;;
 }
-.midlenav-links :nth-child(1) {
+.active{
     background-color: #FCEBA3;
     padding: 0.7rem;
     border-radius: 3rem;
@@ -48,6 +48,10 @@ nav{
     background-color: #FCEBA3;
     padding: 1rem;
     color: white;
+}
+.midlenav-links a:hover{
+    scale: 1.05;
+    transition: all;
 }
 .lastnav-link a{
     color: black;

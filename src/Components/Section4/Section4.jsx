@@ -8,7 +8,7 @@ import sec4box3 from "../../assets/sec4box3.png"
 const Section4 = () => {
   return (
    <>
-   <div className="section4">
+   <div className="section4" id='rent'>
     <h2>Why Rent?</h2>
     <div className="sec3btn-div">
         <button>Cost Saving</button>

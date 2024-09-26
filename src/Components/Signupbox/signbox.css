@@ -18,3 +18,26 @@
     font-size: 2rem;
     font-weight: 300;
 }
+.signup-div-btn{
+    display: flex ;
+    margin-top: 2.5rem;
+    flex-direction: row ;
+    gap: 3rem ;
+    align-items: center;
+}
+.signup-div-btn a{
+    font-size: 1.7rem;
+    color: #3A4453;
+}
+.signup-div-btn :nth-child(1) {
+    background-color: #147AA9;
+    color: white;
+    padding: 1rem;
+    padding-left: 2rem;
+    border-radius: 8px;
+    padding-right: 2rem;
+    font-size: 1.7rem;
+    border: none;
+    cursor: pointer;
+    width: fit-content;
+}
