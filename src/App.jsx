@@ -7,6 +7,7 @@ import CleanOutCloset from "./Pages/CleanOutCloset.jsx";
 import Login from "./Pages/Login.jsx";
 import Signup from "./Pages/Signup.jsx";
 import Fpassword from "./Pages/Fpassword.jsx";
+import Profile from "./Pages/Profile.jsx";
 // Style
 import "./Style/Style.css";
 
@@ -33,6 +34,7 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/fpassword" element={<Fpassword />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
     </Router>
   );

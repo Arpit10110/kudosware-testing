@@ -12,3 +12,10 @@ body{
     background-color: #FBFBFD;
     font-family: "Roboto", sans-serif;
 }
+.loading{
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}

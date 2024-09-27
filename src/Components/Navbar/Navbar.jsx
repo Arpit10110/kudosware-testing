@@ -6,7 +6,10 @@ import logo from "../../assets/logo.png"
 import {Link} from "react-router-dom"
 import {HashLink} from "react-router-hash-link"
 import { NavLink } from 'react-router-dom'
+import {useSelector} from "react-redux"
+import PersonIcon from '@mui/icons-material/Person';
 const Navbar = () => {
+  const { User_id } = useSelector(state => state.tinyclodeatil);
   return (
    <>
    <div className="navtop">
@@ -24,9 +27,13 @@ const Navbar = () => {
       <Link>Store</Link>
       <HashLink to="/#contact">Contact Us</HashLink>
     </div>
-    <div className="lastnav-link">
+    {
+      User_id == "" ?  <div className="lastnav-link">
       <Link to="/login" >Login/Sign Up</Link>
+    </div> :  <div className="Profile-link">
+      <Link to="/profile" ><PersonIcon className='profile-icon' /> </Link>
     </div>
+    }
    </nav>
    </>
   )

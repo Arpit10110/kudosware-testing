@@ -33,7 +33,7 @@ nav{
     justify-content: center;
 }
 .midlenav-links a{
-    color: #0000007A;;
+    color: #0000007A;
 }
 .active{
     background-color: #FCEBA3;
@@ -55,4 +55,11 @@ nav{
 }
 .lastnav-link a{
     color: black;
+}
+.Profile-link .profile-icon{
+    font-size: 2.5rem;
+    background-color: #0000007A;;
+    padding: 0.5rem;
+    color: white;
+    border-radius: 5rem;
 }

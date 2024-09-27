@@ -6,8 +6,10 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import {useDispatch} from "react-redux"
 const Loginbox = () => {
-    const navigate= useNavigate();
+  const navigate= useNavigate();
+  const dispatch=useDispatch()
   const [Email , setEmail]=useState("");
   const [Password , setPassword]=useState("");
   const submitlogin =async(e)=>{
@@ -29,8 +31,15 @@ const Loginbox = () => {
           theme: "colored",
           });
       }else{
-        console.log(data);
+        const shopifydata=data.data;
         navigate("/");
+        dispatch({
+          type:"Profile",
+          payload:{
+            id:shopifydata.id
+          }
+          ,
+        })
       }
     } catch (error) { 
         console.log(error)
