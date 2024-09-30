@@ -5,8 +5,9 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
 const Signupbox = () => {
-  const navigate= useNavigate();
+  const navigate = useNavigate();
   const [Fname, setFname] = useState('');
   const [Email, setEmail] = useState('');
   const [Phone, setPhone] = useState('');
@@ -16,6 +17,39 @@ const Signupbox = () => {
   const [PostalCode, setPostalCode] = useState('');
   const [City, setCity] = useState('');
   const [State, setState] = useState('');
+
+  // Handle Postal Code change
+  const handlePostalCodeChange = async (e) => {
+    const pincode = e.target.value;
+    setPostalCode(pincode);
+
+    // Only fetch data if the postal code is 6 digits (valid for Indian PIN)
+    if (pincode.length === 6) {
+      try {
+        const response = await axios.get(`https://api.postalpincode.in/pincode/${pincode}`);
+        const data = response.data;
+
+        if (data[0].Status === "Success") {
+          const postOffice = data[0].PostOffice[0];
+          setCity(postOffice.District);  // Set the city
+          setState(postOffice.State);    // Set the state
+        } else {
+          toast.error("Invalid Postal Code", {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+          });
+        }
+      } catch (error) {
+        console.error("Error fetching postal code data:", error);
+      }
+    }
+  };
 
   const submithandel = async (e) => {
     e.preventDefault();
@@ -33,15 +67,15 @@ const Signupbox = () => {
         }
       ];
 
-      const {data} = await axios.post(`${import.meta.env.VITE_Port}/signup`, {
+      const { data } = await axios.post(`${import.meta.env.VITE_Port}/signup`, {
         Fname,
         Email,
         Phone,
         Password,
         address
       });
-      console.log(data);
-      if(data.status== false){
+
+      if (data.status === false) {
         toast.error(data.message, {
           position: "top-right",
           autoClose: 5000,
@@ -51,9 +85,9 @@ const Signupbox = () => {
           draggable: true,
           progress: undefined,
           theme: "colored",
-          });
-      }else{
-        navigate("/login");
+        });
+      } else {
+        navigate("/successignup");
       }
     } catch (error) {
       console.error(error);
@@ -89,7 +123,7 @@ const Signupbox = () => {
             />
           </div>
           <div className="login-div-input">
-            <h3>Password</h3>
+            <h3>Create Password</h3>
             <input
               type="password"
               onChange={(e) => setPassword(e.target.value)}
@@ -117,7 +151,8 @@ const Signupbox = () => {
               <h3>Postal Code</h3>
               <input
                 type="text"
-                onChange={(e) => setPostalCode(e.target.value)}
+                value={PostalCode}
+                onChange={handlePostalCodeChange}
                 required
               />
             </div>
@@ -127,6 +162,7 @@ const Signupbox = () => {
               <h3>City</h3>
               <input
                 type="text"
+                value={City}
                 onChange={(e) => setCity(e.target.value)}
                 required
               />
@@ -135,6 +171,7 @@ const Signupbox = () => {
               <h3>State</h3>
               <input
                 type="text"
+                value={State}
                 onChange={(e) => setState(e.target.value)}
                 required
               />
@@ -146,17 +183,17 @@ const Signupbox = () => {
           </div>
         </form>
         <ToastContainer
-position="top-right"
-autoClose={5000}
-hideProgressBar={false}
-newestOnTop={false}
-closeOnClick
-rtl={false}
-pauseOnFocusLoss
-draggable
-pauseOnHover
-theme="colored"
-/>
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="colored"
+        />
       </div>
     </>
   );

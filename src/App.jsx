@@ -8,6 +8,7 @@ import Login from "./Pages/Login.jsx";
 import Signup from "./Pages/Signup.jsx";
 import Fpassword from "./Pages/Fpassword.jsx";
 import Profile from "./Pages/Profile.jsx";
+import SuccesSignup from "./Pages/SuccesSignup.jsx";
 // Style
 import "./Style/Style.css";
 
@@ -35,6 +36,7 @@ const App = () => {
         <Route path="/signup" element={<Signup />} />
         <Route path="/fpassword" element={<Fpassword />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/successignup" element={<SuccesSignup/>} />
       </Routes>
     </Router>
   );
