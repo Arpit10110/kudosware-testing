@@ -9,6 +9,7 @@ import Signup from "./Pages/Signup.jsx";
 import Fpassword from "./Pages/Fpassword.jsx";
 import Profile from "./Pages/Profile.jsx";
 import SuccesSignup from "./Pages/SuccesSignup.jsx";
+import  {Protected,UnRProtected} from "./Components/protected/Protected.jsx"
 // Style
 import "./Style/Style.css";
 
@@ -29,13 +30,13 @@ const App = () => {
       {/* ScrollToTop is now inside the Router */}
       <ScrollToTop />
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path='/' element={<  Home />} />
         <Route path='/about' element={<About />} />
         <Route path='/clean-out-closet' element={<CleanOutCloset />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/fpassword" element={<Fpassword />} />
-        <Route path="/profile" element={<Profile />} />
+        <Route path="/login" element={<Protected Component={Login}  />} />
+        <Route path="/signup" element={<Protected Component={Signup} />} />
+        <Route path="/fpassword" element={<Protected Component={Fpassword} />} />
+        <Route path="/profile" element={<UnRProtected Component={Profile}/>} />
         <Route path="/successignup" element={<SuccesSignup/>} />
       </Routes>
     </Router>

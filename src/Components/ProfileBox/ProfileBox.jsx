@@ -15,6 +15,7 @@ const ProfileBox = () => {
             const {data}=await axios.post(`${import.meta.env.VITE_Port}/profile`,{
                 userid : User_id
             })
+            console.log(data)
             setUserdata(data.data);
             if (data.data.addresses && data.data.addresses.length > 0) {
                 setAddress(data.data.addresses[0]);  // Assuming the first address
