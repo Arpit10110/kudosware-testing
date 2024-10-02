@@ -24,7 +24,7 @@ const Navbar = () => {
       <HashLink to="/#rent">Why Rent?</HashLink>
       <NavLink to="/clean-out-closet">Clean Out Closet</NavLink>
       <NavLink to="/about" >About Us</NavLink>
-      <Link>Store</Link>
+      <NavLink to="/store">Store</NavLink>
       <HashLink to="/#contact">Contact Us</HashLink>
     </div>
     {

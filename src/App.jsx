@@ -9,6 +9,8 @@ import Signup from "./Pages/Signup.jsx";
 import Fpassword from "./Pages/Fpassword.jsx";
 import Profile from "./Pages/Profile.jsx";
 import SuccesSignup from "./Pages/SuccesSignup.jsx";
+import Store from "./Pages/Store.jsx";
+//components
 import  {Protected,UnRProtected} from "./Components/protected/Protected.jsx"
 // Style
 import "./Style/Style.css";
@@ -38,6 +40,7 @@ const App = () => {
         <Route path="/fpassword" element={<Protected Component={Fpassword} />} />
         <Route path="/profile" element={<UnRProtected Component={Profile}/>} />
         <Route path="/successignup" element={<SuccesSignup/>} />
+        <Route path="/store" element={<Store/>} />
       </Routes>
     </Router>
   );
