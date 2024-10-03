@@ -1,0 +1,45 @@
+.store-top-banner{
+    width: 100%;
+}
+.store-top-banner img{
+    width: 100%;
+}
+.store-nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 7rem;
+    gap: 11rem;
+    flex-wrap: wrap;
+}
+.store-link{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: fit-content;
+    padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+    border-radius: 10px;
+    color: #5a5a5a;
+    box-shadow: 0 0 4px 1px;
+}
+.store-link img{
+    width: 3vw;
+}
+.store-link h6{
+    font-size: 2rem;
+    color: black;
+    font-weight: 500;
+}
+
+.store-link:hover{
+    scale: 1.03;
+}
+
+.AllStore-main-din{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 5rem;
+    align-items: center;
+    row-gap: 5rem;
+    padding-bottom: 10rem;
+}

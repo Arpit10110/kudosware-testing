@@ -10,6 +10,11 @@ import Fpassword from "./Pages/Fpassword.jsx";
 import Profile from "./Pages/Profile.jsx";
 import SuccesSignup from "./Pages/SuccesSignup.jsx";
 import Store from "./Pages/Store.jsx";
+import AllStore from "./Pages/AllStore.jsx";
+import BoysStore from "./Pages/BoysStore.jsx";
+import GirlsStore from "./Pages/GirlsStore.jsx";
+import ToysStore from "./Pages/ToysStore.jsx";
+import AccessoriesStore from "./Pages/AccessoriesStore.jsx";
 //components
 import  {Protected,UnRProtected} from "./Components/protected/Protected.jsx"
 // Style
@@ -20,7 +25,9 @@ const ScrollToTop = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    if (!pathname.includes("/store")) {
+      window.scrollTo(0, 0);
+    }
   }, [pathname]);
 
   return null;
@@ -40,7 +47,13 @@ const App = () => {
         <Route path="/fpassword" element={<Protected Component={Fpassword} />} />
         <Route path="/profile" element={<UnRProtected Component={Profile}/>} />
         <Route path="/successignup" element={<SuccesSignup/>} />
-        <Route path="/store" element={<Store/>} />
+        <Route path="/store" element={<Store/>}>
+          <Route path="/store" element={<AllStore/>} />
+          <Route path="/store/boys" element={<BoysStore/>} />
+          <Route path="/store/girls" element={<GirlsStore/>} />
+          <Route path="/store/toys" element={<ToysStore/>} />
+          <Route path="/store/accessories" element={<AccessoriesStore/>} />
+        </Route>
       </Routes>
     </Router>
   );
