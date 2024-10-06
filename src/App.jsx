@@ -15,6 +15,7 @@ import BoysStore from "./Pages/BoysStore.jsx";
 import GirlsStore from "./Pages/GirlsStore.jsx";
 import ToysStore from "./Pages/ToysStore.jsx";
 import AccessoriesStore from "./Pages/AccessoriesStore.jsx";
+import Cart from "./Pages/Cart.jsx";
 //components
 import  {Protected,UnRProtected} from "./Components/protected/Protected.jsx"
 // Style
@@ -54,6 +55,7 @@ const App = () => {
           <Route path="/store/toys" element={<ToysStore/>} />
           <Route path="/store/accessories" element={<AccessoriesStore/>} />
         </Route>
+        <Route path='/cart' element={<Cart/>}  />
       </Routes>
     </Router>
   );

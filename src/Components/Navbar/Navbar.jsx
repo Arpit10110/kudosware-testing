@@ -8,8 +8,11 @@ import {HashLink} from "react-router-hash-link"
 import { NavLink } from 'react-router-dom'
 import {useSelector} from "react-redux"
 import PersonIcon from '@mui/icons-material/Person';
+//icons
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 const Navbar = () => {
   const { User_id } = useSelector(state => state.tinyclodeatil);
+  const { Cart } = useSelector(state => state.tinyclodeatil);
   return (
    <>
    <div className="navtop">
@@ -26,6 +29,10 @@ const Navbar = () => {
       <NavLink to="/about" >About Us</NavLink>
       <NavLink to="/store">Store</NavLink>
       <HashLink to="/#contact">Contact Us</HashLink>
+      <Link to="/cart" className="cart-link">
+        <ShoppingCartIcon className="cart-icon" />
+        <span>{Cart.length}</span>
+      </Link>
     </div>
     {
       User_id == "" ?  <div className="lastnav-link">

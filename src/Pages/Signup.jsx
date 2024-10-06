@@ -7,7 +7,7 @@ const Signup = () => {
   return (
     <>
     <Navbar/>
-    <SignupTopBanner/>
+    <SignupTopBanner name={"Create Account"} />
     <Signupbox/>
     <Footer/>
     </>

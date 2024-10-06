@@ -63,3 +63,6 @@ nav{
     color: white;
     border-radius: 5rem;
 }
+.cart-link .cart-icon{
+    font-size: 2.2rem;
+}
