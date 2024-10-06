@@ -32,7 +32,7 @@ const AllStore = () => {
           {
             AllstoreData.map((i,index)=>{
               return(
-                <StoreCard key={index} id={i.id} image={i.image.src} title={i.title} price={i.variants[0].price}  />
+                <StoreCard key={index} id={i.id} image={i.image.src} title={i.title} Rent={i.variants[0]} Buy={i.variants[1]}  />
               )
             })
           }
