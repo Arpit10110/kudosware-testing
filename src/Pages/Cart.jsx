@@ -1,11 +1,17 @@
 import React from 'react'
 import Navbar from '../Components/Navbar/Navbar'
+import Footer from '../Components/Footer/Footer'
 import SignupTopBanner from '../Components/SignupTopBanner/SignupTopBanner.jsx'
-import { useSelector } from "react-redux"
+import { useSelector,useDispatch } from "react-redux"
 import "../Style/Cart.css"
 import { Link } from 'react-router-dom'
 import DeleteIcon from '@mui/icons-material/Delete';
+//img
+import Cartimg1 from "../assets/Cart-img1.png"
+import Cartimg2 from "../assets/Cart-img2.png"
+import Cartimg3 from "../assets/Cart-img3.png"
 const Cart = () => {
+  const dispatch= useDispatch()
   const { Cart } = useSelector(state => state.tinyclodeatil);
   const { TotalPrice } = useSelector(state => state.tinyclodeatil);
   const { Shipping } = useSelector(state => state.tinyclodeatil);
@@ -14,6 +20,36 @@ const Cart = () => {
   // Conditional Shipping fee (0 if cart is empty)
   const shippingFee = Cart.length === 0 ? 0 : Shipping;
 
+  const increseQty = (id) => {
+    dispatch({
+      type: 'Increment',
+      payload: id
+    });
+    dispatch({
+      type: 'Calculate'
+    });
+  };
+  
+  const decreaseQty = (id) => {
+    dispatch({
+      type: 'decrement',
+      payload: id
+    });
+    dispatch({
+      type: 'Calculate'
+    });
+  };
+  
+  const deleteItem = (id) => {
+    dispatch({
+      type: 'deleteitem',
+      payload: id
+    });
+    dispatch({
+      type: 'Calculate'
+    });
+  };
+  
   return (
     <>
       <Navbar />
@@ -44,20 +80,46 @@ const Cart = () => {
                     {/* Assuming you will dynamically display the size */}
                     <h4>Size: {i.size ? i.size : 'N/A'}</h4>
                     <h4>₹{i.price}</h4>
-                    {/* <div className="cart-controller">
+                    <div className="cart-controller">
                         <div className="cart-qty">
-                            <button>+</button>
-                            <h5>1</h5>
-                            <button>-</button>
+                        <button onClick={() => increseQty(i.id)} >+</button>
+                            <h5>{i.qty}</h5>
+                          <button onClick={() => decreaseQty(i.id)} >-</button>
                         </div>
-                        <button><DeleteIcon/></button>
-                    </div> */}
+                        <button onClick={() => deleteItem(i.id)} className='cart-delete-btn' ><DeleteIcon className='cart-delete-icon' /></button>
+                    </div>
                   </div>
                 </div>
               ))}
             </div>
           )}
+
+          <div className="cart-section3">
+
+                <div className="cart-sec3-box">
+                  <img src={Cartimg1} alt="Cartimg1" />
+                  <h4>FREE SHIPPING</h4>
+                </div>
+
+                <div className="cart-sec3-box">
+                  <img src={Cartimg2} alt="Cartimg2" />
+                  <h4>EASY RETURNS</h4>
+                </div>
+
+                <div className="cart-sec3-box">
+                  <img className='bnkl' src={Cartimg3} alt="Cartimg3" />
+                  <h4>SECURE SHOPPING</h4>
+                </div>
+
+
+          </div>
+
+
+
         </div>
+
+        
+
 
         {/* Price Summary Section - Always Visible */}
         <div className="cart-bill-main">
@@ -83,6 +145,7 @@ const Cart = () => {
         </div>
 
       </div>
+      <Footer/>
     </>
   )
 }

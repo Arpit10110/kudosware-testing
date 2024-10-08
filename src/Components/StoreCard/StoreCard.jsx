@@ -1,7 +1,8 @@
 import React from 'react';
 import "./StoreCard.css";
 import { useDispatch } from "react-redux";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
 const StoreCard = ({ id, image, title, Buy, Rent }) => {
   const dispatch = useDispatch();
 
@@ -20,6 +21,17 @@ const StoreCard = ({ id, image, title, Buy, Rent }) => {
     dispatch({
       type:'Calculate'
     });
+
+    toast.info("added to Cart", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      });
  };
 
   return (
@@ -31,8 +43,20 @@ const StoreCard = ({ id, image, title, Buy, Rent }) => {
         <button onClick={() => addtocartHandler(Buy)}>Buy Now @{Buy.price} INR</button>
         <button onClick={() => addtocartHandler(Rent)}>Rent @{Rent.price} INR</button>
       </div>
+      <ToastContainer
+position="top-right"
+autoClose={5000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="colored"
+/>
     </>
   );
 };
 
-export default StoreCard;
+export default StoreCard; 
