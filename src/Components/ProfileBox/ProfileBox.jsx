@@ -18,7 +18,7 @@ const ProfileBox = () => {
             console.log(data)
             setUserdata(data.data);
             if (data.data.addresses && data.data.addresses.length > 0) {
-                setAddress(data.data.addresses[0]);  // Assuming the first address
+                setAddress(data.data.default_address);  // Assuming the first address
             }
             setisLoading(false);
         } catch (error) {
