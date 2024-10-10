@@ -12,6 +12,7 @@ const ProfileBox = () => {
     const [isLoading,setisLoading] = useState(true);
     const Profiledata = async()=>{
         try {
+            console.log(import.meta.env.VITE_Port)
             const {data}=await axios.post(`${import.meta.env.VITE_Port}/profile`,{
                 userid : User_id
             })
