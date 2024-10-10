@@ -131,7 +131,7 @@ const Checkout = () => {
       amount
     })
     const options = {
-      key: `${import.meta.env.VITE_RazarPay_Key}`, 
+      key: "rzp_test_zX8JwR7ErLD2Nw", 
       amount: order.amount, 
       currency: "INR",
       name: "TinyClo",
