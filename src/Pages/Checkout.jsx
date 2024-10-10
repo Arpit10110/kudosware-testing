@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../Components/Navbar/Navbar";
 import SignupTopBanner from "../Components/SignupTopBanner/SignupTopBanner.jsx";
-import { useSelector } from "react-redux";
+import { useSelector,useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import Checkbox from "@mui/material/Checkbox"; // Import Checkbox from Material UI
 import "../Style/Checkout.css";
 
 const Checkout = () => {
+  const dispatch = useDispatch();
   const { User_id } = useSelector((state) => state.tinyclodeatil || {});
   const { Cart = [] } = useSelector((state) => state.tinyclodeatil || {});
   const { TotalPrice = 0 } = useSelector((state) => state.tinyclodeatil || {});
@@ -17,12 +19,15 @@ const Checkout = () => {
   const [savedAddresses, setSavedAddresses] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [showNewAddress, setShowNewAddress] = useState(false);
+  const [selectedAddressIndex, setSelectedAddressIndex] = useState(0); // Track selected address index
 
   const [address1, setAddress1] = useState("");
   const [landmark, setLandmark] = useState("");
   const [city, setCity] = useState("");
   const [state, setState] = useState("");
   const [pincode, setPincode] = useState("");
+  const [userdata,setuserdata] = useState({});
+
 
   const fetchProfileData = async () => {
     try {
@@ -31,9 +36,16 @@ const Checkout = () => {
       });
       if (data.data.addresses) {
         setSavedAddresses(data.data.addresses);
-        console.log(savedAddresses);
       }
       setIsLoading(false);
+      setuserdata(data.data)
+      dispatch({
+        type:"selectedAddress",
+        payload:{
+          load:data.data.addresses[0],
+        }
+      })
+
     } catch (error) {
       console.error(error);
       setIsLoading(false);
@@ -42,13 +54,13 @@ const Checkout = () => {
 
   useEffect(() => {
     fetchProfileData();
+   
   }, []);
 
   const handlePostalCodeChange = async (e) => {
     const pincode = e.target.value;
     setPincode(pincode);
 
-    // Fetch city and state based on pincode
     if (pincode.length === 6) {
       try {
         const response = await axios.get(`https://api.postalpincode.in/pincode/${pincode}`);
@@ -56,8 +68,8 @@ const Checkout = () => {
 
         if (data[0].Status === "Success") {
           const postOffice = data[0].PostOffice[0];
-          setCity(postOffice.District);  // Set the city
-          setState(postOffice.State);    // Set the state
+          setCity(postOffice.District);
+          setState(postOffice.State);
         } else {
           console.error("Invalid Postal Code");
         }
@@ -68,35 +80,31 @@ const Checkout = () => {
   };
 
   const handleAddAddress = async (e) => {
-    e.preventDefault(); // Prevent default form submission
+    e.preventDefault();
 
     const newAddr = {
-      address1,
-      address2: landmark,
+      address1: `${address1}, ${landmark}`,
       city,
       province: state,
       zip: pincode,
-      country: "India", // Specify country
-      default: false,   // Change this if you want to set this as default
+      country: "India",
+      default: false,
     };
 
     try {
-      // Make a POST request to Shopify API to add the new address
       const response = await axios.post(`${import.meta.env.VITE_Port}/addnewaddress`, {
         customerId: User_id,
         address: newAddr,
       });
 
       if (response.data.success) {
-        // Optionally, refresh the saved addresses
-        fetchProfileData(); // Re-fetch addresses to include the new one
-        // Clear the form fields
+        fetchProfileData();
         setAddress1("");
         setLandmark("");
         setCity("");
         setState("");
         setPincode("");
-        setShowNewAddress(false); // Hide the new address form
+        setShowNewAddress(false);
       } else {
         console.error("Error adding address:", response.data.message);
       }
@@ -104,6 +112,48 @@ const Checkout = () => {
       console.error("Error adding address to Shopify:", error);
     }
   };
+
+  // Handle selecting an address
+  const handleSelectAddress = (index) => {
+    setSelectedAddressIndex(index);
+    dispatch({
+      type:"selectedAddress",
+      payload:{
+        load: savedAddresses[index],
+      }
+    })
+  };
+
+
+  const paymentIntegration = async()=>{
+    const amount = Total;
+    const {data:{order}}= await axios.post(`${import.meta.env.VITE_Port}/checkout`,{
+      amount
+    })
+    const options = {
+      key: `${import.meta.env.VITE_RazarPay_Key}`, 
+      amount: order.amount, 
+      currency: "INR",
+      name: "TinyClo",
+      description: "Test Transaction",
+      image: "https://lh3.googleusercontent.com/a/ACg8ocKj3Rpf78RJoBPWSyNI1UdKxTw_9zJ4lNZbJCCbYI-bYW8nZRg=s96-c-rg-br100",
+      order_id: order.id, 
+      callback_url:`${import.meta.env.VITE_Port}/paymentverification`,
+      prefill: {
+          name: userdata.first_name,
+          email: userdata.email,
+          contact: userdata.phone
+      },
+      notes: {
+          address: "Razorpay Corporate Office"
+      },
+      theme: {
+          color: "#3399cc"
+      }
+  };
+    const rzp1 = new window.Razorpay(options);
+    rzp1.open();
+  }
 
   return (
     <>
@@ -127,20 +177,29 @@ const Checkout = () => {
                 <div className="loading-checkout">
                   <h1>Loading...</h1>
                 </div>
-              ) : 
-              <div className="Saved-address" >
-               {
-
-                savedAddresses.map((i,index)=>{
-                    return(
-                        <p key={index}>
-                        {i.address1}, {i.city}, {i.province}, {i.zip}, {i.country}
+              ) : (
+                <div className="saved-addresses">
+                  {savedAddresses.map((address, index) => (
+                    <div
+                      key={index}
+                      className={`saved-address ${selectedAddressIndex === index ? "selected" : ""}`}
+                      onClick={() => handleSelectAddress(index)}
+                      style={{
+                        border: selectedAddressIndex === index ? "2px solid #007bff" : "1px solid #ddd",
+                      }}
+                    >
+                      <Checkbox
+                        checked={selectedAddressIndex === index}
+                        onChange={() => handleSelectAddress(index)}
+                        color="primary"
+                      />
+                      <p>
+                        {address.address1}, {address.city}, {address.province}, {address.zip}, {address.country}
                       </p>
-                    )
-                })
-
-               }
-              </div>
+                    </div>
+                  ))}
+                </div>
+              )
             ) : (
               <div className="new-address-form">
                 <form className="loginbox checkout-add-address" onSubmit={handleAddAddress}>
@@ -219,7 +278,7 @@ const Checkout = () => {
                 <h1>Total</h1>
                 <h1>₹{Total}</h1>
               </div>
-              <Link to="/payment">Pay ₹{Total}</Link>
+              <Link className="pay-btn-checkout"  to="#"  onClick={paymentIntegration} >Pay ₹{Total}</Link>
             </div>
           </div>
         </div>

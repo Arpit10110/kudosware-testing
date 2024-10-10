@@ -17,6 +17,7 @@ import ToysStore from "./Pages/ToysStore.jsx";
 import AccessoriesStore from "./Pages/AccessoriesStore.jsx";
 import Cart from "./Pages/Cart.jsx";
 import Checkout from "./Pages/Checkout.jsx";
+import Success from "./Pages/Success";
 //components
 import  {Protected,UnRProtected} from "./Components/protected/Protected.jsx"
 // Style
@@ -58,6 +59,7 @@ const App = () => {
         </Route>
         <Route path='/cart' element={<Cart/>}  />
         <Route path="/checkout" element={<Checkout/>}  />
+        <Route path="/success" element={<Success/>} />
       </Routes>
     </Router>
   );

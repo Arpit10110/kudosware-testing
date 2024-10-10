@@ -7,13 +7,17 @@ const Calculate = createAction('Calculate');
 const Increment = createAction('Increment');
 const decrement = createAction('decrement');
 const deleteitem = createAction('deleteitem');
+const selectedAddress = createAction('selectedAddress');
 
 export const tinycloreducer = createReducer({
   User_id: localStorage.getItem("TinyCloShopyID") ? localStorage.getItem("TinyCloShopyID") : "",
   Cart: localStorage.getItem("TinyClocart") ? JSON.parse(localStorage.getItem("TinyClocart")) : [],
   TotalPrice: localStorage.getItem("TinyCloTotalPrice") ? localStorage.getItem("TinyCloTotalPrice") : 0,
   Shipping: 100,
-  Total: localStorage.getItem("TinyCloTotal") ? localStorage.getItem("TinyCloTotal") : 0
+  Total: localStorage.getItem("TinyCloTotal") ? localStorage.getItem("TinyCloTotal") : 0,
+  selectedaddressIndex:localStorage.getItem("TinyCloSA") ? JSON.parse(localStorage.getItem("TinyCloSA")) : {}
+
+
 }, (builder) => {
   builder.addCase(Profile, (state, action) => {
     const value = action.payload;
@@ -83,5 +87,12 @@ export const tinycloreducer = createReducer({
     const itemId = action.payload; // Assuming payload contains the item's id
     state.Cart = state.Cart.filter(item => item.id !== itemId); // Remove item
     localStorage.setItem("TinyClocart", JSON.stringify(state.Cart)); // Update localStorage
+  });
+
+  builder.addCase(selectedAddress, (state, action) => {
+    const value = action.payload; // Assuming payload contains the item's id
+    state.selectedaddressIndex = value.load
+    console.log(value.load); 
+    localStorage.setItem("TinyCloSA", JSON.stringify(state.selectedaddressIndex ));
   });
 });
