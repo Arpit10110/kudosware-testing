@@ -45,6 +45,7 @@ const Checkout = () => {
           load:data.data.addresses[0],
         }
       })
+      
 
     } catch (error) {
       console.error(error);
@@ -54,7 +55,7 @@ const Checkout = () => {
 
   useEffect(() => {
     fetchProfileData();
-   
+   console.log(`${import.meta.env.VITE_Port}/paymentverification`);
   }, []);
 
   const handlePostalCodeChange = async (e) => {
