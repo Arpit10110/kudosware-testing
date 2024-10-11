@@ -45,7 +45,7 @@ const Checkout = () => {
           load:data.data.addresses[0],
         }
       })
-      
+
 
     } catch (error) {
       console.error(error);
@@ -139,7 +139,7 @@ const Checkout = () => {
       description: "Test Transaction",
       image: "https://lh3.googleusercontent.com/a/ACg8ocKj3Rpf78RJoBPWSyNI1UdKxTw_9zJ4lNZbJCCbYI-bYW8nZRg=s96-c-rg-br100",
       order_id: order.id, 
-      callback_url:`${import.meta.env.VITE_Port}/paymentverification`,
+      callback_url:'https://kudosware-backend.vercel.app/paymentverification',
       prefill: {
           name: userdata.first_name,
           email: userdata.email,
