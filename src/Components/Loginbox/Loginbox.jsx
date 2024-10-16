@@ -19,7 +19,7 @@ const Loginbox = () => {
         Email : Email,
         Password : Password
       })
-      console.log(data);
+      console.log("this is the output",data);
       if(data.status== false){
         toast.error(data.message, {
           position: "top-right",
@@ -43,7 +43,8 @@ const Loginbox = () => {
         })
       }
     } catch (error) { 
-        console.log(error)
+      console.log("this is the output",error);
+
     } 
   }
   return (
