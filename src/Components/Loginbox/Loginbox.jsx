@@ -19,10 +19,11 @@ const Loginbox = () => {
         Email : Email,
         Password : Password
       })
+      console.log(data);
       if(data.status== false){
         toast.error(data.message, {
           position: "top-right",
-          autoClose: 5000,
+          autoClose: 5000, 
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,

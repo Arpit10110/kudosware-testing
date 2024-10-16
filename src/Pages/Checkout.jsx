@@ -131,9 +131,10 @@ const Checkout = () => {
     const {data:{order}}= await axios.post(`${import.meta.env.VITE_Port}/checkout`,{
       amount
     })
+    console.log(order)
     const options = {
       key: "rzp_test_zX8JwR7ErLD2Nw", 
-      amount: order.amount, 
+      amount: order.amount,  
       currency: "INR",
       name: "TinyClo",
       description: "Test Transaction",
