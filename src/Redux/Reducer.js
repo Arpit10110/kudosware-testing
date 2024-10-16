@@ -8,6 +8,7 @@ const Increment = createAction('Increment');
 const decrement = createAction('decrement');
 const deleteitem = createAction('deleteitem');
 const selectedAddress = createAction('selectedAddress');
+const emptycart = createAction('emptycart');
 
 export const tinycloreducer = createReducer({
   User_id: localStorage.getItem("TinyCloShopyID") ? localStorage.getItem("TinyCloShopyID") : "",
@@ -95,4 +96,10 @@ export const tinycloreducer = createReducer({
     console.log(value.load); 
     localStorage.setItem("TinyCloSA", JSON.stringify(state.selectedaddressIndex ));
   });
+
+  builder.addCase(emptycart,(state, action) => {
+      state.Cart=[];
+      localStorage.setItem("TinyClocart", JSON.stringify(state.Cart));
+  })
+
 });

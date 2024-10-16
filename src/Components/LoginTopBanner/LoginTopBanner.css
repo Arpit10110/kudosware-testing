@@ -13,7 +13,7 @@
 }
 
 .logintop-banner img{
-    height: 40vh;
+    height:inherit;
     width: 100%;
     position: absolute;
     z-index: -5;
@@ -30,4 +30,10 @@
     background-color: #FC6565;
     height: 0.5vh;
     width: 100%;
+}
+
+@media only  screen and (width<=600px){
+    .logintop-banner{
+        height: 25vh;
+    }
 }

@@ -6,6 +6,7 @@
     display: flex;
     justify-content: center;
     padding: 1rem;
+    text-align: center;
     align-items: center;
 }
 nav{
@@ -65,4 +66,54 @@ nav{
 }
 .cart-link .cart-icon{
     font-size: 2.2rem;
+}
+.mobile-links{
+    display: none;
+}
+@media only   screen and (width<=600px){
+    .mobile-links{
+        display: inline;
+    }
+    .midlenav-links{
+        display: none;
+    }
+    .lastnav-link{
+        display: none;
+    }
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 1rem;
+        height: 10vh;
+        padding-right: 1rem;
+    }
+    .logo {
+        width: 15%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .logo img{
+        width: 100%;
+    }
+    .all-links {
+        display: flex;
+        flex-direction: column;
+        padding: 2rem;
+        gap: 4rem;
+        font-size: 2rem;
+        justify-content: center;
+        height: 80vh;
+    }
+    .all-links a{
+        color: black;
+    }
+    .mobile-links button{
+        background-color: transparent;
+        border: none;
+    }
+    .MenuIcon{
+        font-size: 3.5rem !important;
+    }
 }

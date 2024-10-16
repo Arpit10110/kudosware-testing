@@ -21,3 +21,10 @@ body{
     align-items: center;
     font-size: 2rem;
 }
+
+
+@media only  screen and (width<=600px){
+        html{
+            font-size: 55%;
+        }
+}

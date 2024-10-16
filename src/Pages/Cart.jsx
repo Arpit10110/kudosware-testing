@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import Navbar from '../Components/Navbar/Navbar'
 import Footer from '../Components/Footer/Footer'
 import SignupTopBanner from '../Components/SignupTopBanner/SignupTopBanner.jsx'
@@ -10,13 +10,14 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import Cartimg1 from "../assets/Cart-img1.png"
 import Cartimg2 from "../assets/Cart-img2.png"
 import Cartimg3 from "../assets/Cart-img3.png"
+import { useState } from 'react'
 const Cart = () => {
   const dispatch= useDispatch()
   const { Cart } = useSelector(state => state.tinyclodeatil);
   const { TotalPrice } = useSelector(state => state.tinyclodeatil);
   const { Shipping } = useSelector(state => state.tinyclodeatil);
   const { Total } = useSelector(state => state.tinyclodeatil);
-
+  const {User_id} = useSelector(state => state.tinyclodeatil);
   // Conditional Shipping fee (0 if cart is empty)
   const shippingFee = Cart.length === 0 ? 0 : Shipping;
 
@@ -49,7 +50,7 @@ const Cart = () => {
       type: 'Calculate'
     });
   };
-  
+
   return (
     <>
       <Navbar />
@@ -113,14 +114,7 @@ const Cart = () => {
 
 
           </div>
-
-
-
         </div>
-
-        
-
-
         {/* Price Summary Section - Always Visible */}
         <div className="cart-bill-main">
           <div className="price-summary-main">
@@ -140,7 +134,9 @@ const Cart = () => {
               <h1>Total</h1>
               <h1>₹{Total}</h1>
             </div>
-            <Link to="/checkout">Proceed to Checkout</Link>
+            {
+              User_id== "" ? <Link to="/login">Login Please</Link>: <Link to="/checkout">Proceed to Checkout</Link>
+            }
           </div>
         </div>
 

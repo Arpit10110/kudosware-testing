@@ -31,3 +31,18 @@ footer{
     font-size: 1.1rem;
     font-weight: 400;
 }
+
+@media only screen and (width<= 600px){
+    .footer-div {
+        flex-direction: column;
+        padding-right: 0rem;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 3rem;
+    }
+    .footerCont {
+        width: 85%;
+        justify-content: space-between;
+        gap: 0rem;
+    }
+}

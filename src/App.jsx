@@ -58,7 +58,7 @@ const App = () => {
           <Route path="/store/accessories" element={<AccessoriesStore/>} />
         </Route>
         <Route path='/cart' element={<Cart/>}  />
-        <Route path="/checkout" element={<Checkout/>}  />
+        <Route path="/checkout" element={<UnRProtected Component={Checkout}/>}  />
         <Route path="/success" element={<Success/>} />
       </Routes>
     </Router>

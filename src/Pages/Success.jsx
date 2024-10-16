@@ -36,7 +36,7 @@ const Success = () => {
     province: selectedaddressIndex.province,
     country: selectedaddressIndex.country,
     zip: selectedaddressIndex.zip,
-    name:selectedaddressIndex.first_name,
+    name:selectedaddressIndex.name,
     province_code: selectedaddressIndex.province_code
   };
 
@@ -46,12 +46,12 @@ const Success = () => {
       const { data } = await axios.post(`${import.meta.env.VITE_Port}/createorder`, orderdata);
       console.log(data);
 
-      // dispatch({
-      //   type:"emptycart"
-      // })
-      // dispatch({
-      //   type: 'Calculate'
-      // });
+      dispatch({
+        type:"emptycart"
+      })
+      dispatch({
+        type: 'Calculate'
+      });
     } catch (error) {
       console.error("Error creating order:", error);
     }
