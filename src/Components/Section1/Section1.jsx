@@ -1,6 +1,8 @@
 import React from 'react'
 import "./Section1.css"
 import section1Img from "../../assets/section1.png"
+import {HashLink} from "react-router-hash-link"
+import { Link } from 'react-router-dom'
 const Section1 = () => {
   return (
     <>
@@ -12,8 +14,8 @@ const Section1 = () => {
                     <h5>TinyClo Subscription</h5>
                 </div>
                 <div className="sec1-cont2">
-                    <h3>How it works?</h3>
-                    <h3>Start Membership</h3>
+                    <HashLink  to="/#howitworks">How it works?</HashLink>
+                    <Link to="/buymembership" >Start Membership</Link>
                 </div>
         </div>
         <div className="section-Img">

@@ -3,7 +3,7 @@ import "./Navbar.css";
 //img
 import logo from "../../assets/logo.png";
 //imports
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -13,6 +13,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 //icons
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 const Navbar = () => {
+  const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const { User_id } = useSelector((state) => state.tinyclodeatil);
   const { Cart } = useSelector((state) => state.tinyclodeatil);
@@ -26,7 +27,7 @@ const Navbar = () => {
       </div>
       <nav>
         <div className="logo">
-          <img src={logo} alt="logo" />
+          <img onClick={()=>navigate("/")} src={logo} alt="logo" />
         </div>
         <div className="midlenav-links">
           <NavLink to="/">Home</NavLink>

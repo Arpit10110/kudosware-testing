@@ -1,17 +1,17 @@
 import React from 'react'
 import "./Section3.css"
 //img
-import Section3Img from "../../assets/Section3Img.png"
+import howitworks from "../../assets/howitworks.mp4"
 import sec3box1 from "../../assets/sec3box1.png"
 import sec3box2 from "../../assets/sec3box2.png"
 import sec3box3 from "../../assets/sec3box3.png"
 const Section3 = () => {
   return (
    <>
-   <div className="section3">
+   <div id='howitworks'  className="section3">
     <h2>How it Works?</h2>
     <div className="section3-Img">
-        <img src={Section3Img} alt="Section3Img" />
+        <video src={howitworks} muted={true} loop={true} autoPlay={true} />
     </div>
     <div className="section3-ContBox">
         <div className="sec3box">

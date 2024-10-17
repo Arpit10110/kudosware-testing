@@ -25,6 +25,7 @@ nav{
 }
 .logo img{
     width: 65%;
+    cursor: pointer;
 }
 .midlenav-links{
     gap: 3rem;
