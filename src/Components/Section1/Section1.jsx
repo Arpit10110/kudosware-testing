@@ -15,7 +15,7 @@ const Section1 = () => {
                 </div>
                 <div className="sec1-cont2">
                     <HashLink  to="/#howitworks">How it works?</HashLink>
-                    <Link to="/buymembership" >Start Membership</Link>
+                    <Link to="/choose-membership" >Start Membership</Link>
                 </div>
         </div>
         <div className="section-Img">

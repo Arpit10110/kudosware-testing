@@ -18,6 +18,7 @@ import AccessoriesStore from "./Pages/AccessoriesStore.jsx";
 import Cart from "./Pages/Cart.jsx";
 import Checkout from "./Pages/Checkout.jsx";
 import Success from "./Pages/Success";
+import Choosemembership from "./Pages/Choosemembership.jsx";
 //components
 import  {Protected,UnRProtected} from "./Components/protected/Protected.jsx"
 // Style
@@ -30,6 +31,8 @@ const ScrollToTop = () => {
   useEffect(() => {
     if (!pathname.includes("/store")) {
       window.scrollTo(0, 0);
+    }else{
+      window.scrollTo(500,500);
     }
   }, [pathname]);
 
@@ -60,6 +63,7 @@ const App = () => {
         <Route path='/cart' element={<Cart/>}  />
         <Route path="/checkout" element={<UnRProtected Component={Checkout}/>}  />
         <Route path="/success" element={<Success/>} />
+        <Route path="/choose-membership" element={<Choosemembership/>} />
       </Routes>
     </Router>
   );

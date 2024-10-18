@@ -5,7 +5,9 @@ import howitworks from "../../assets/howitworks.mp4"
 import sec3box1 from "../../assets/sec3box1.png"
 import sec3box2 from "../../assets/sec3box2.png"
 import sec3box3 from "../../assets/sec3box3.png"
+import { useNavigate } from 'react-router-dom'
 const Section3 = () => {
+    const navigate = useNavigate();
   return (
    <>
    <div id='howitworks'  className="section3">
@@ -43,7 +45,7 @@ const Section3 = () => {
         </div>
     </div>
     <div className="sec3btn">
-    <button>Start Membership</button>
+    <button onClick={()=>navigate("/choose-membership")} >Start Membership</button>
     </div>
    </div>
    </>

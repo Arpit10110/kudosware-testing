@@ -1,0 +1,124 @@
+.choosemem-main{
+    background-color: #FFFFFF;
+    padding-bottom: 10rem;
+}
+.banner-chosemem{
+    background-image: url("../assets/chosemem.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-direction: column;
+    padding: 5rem 0rem 5rem 0rem;
+}
+.banner-chosemem h1{
+    font-size: 5rem;
+    font-weight: 500;
+    color: #147AA9;
+}
+.banner-chosemem h1 span{
+    color: #FC6565;
+}
+.banner-chosemem h2{
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.choosememe-cardmain{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 1rem 3rem 1rem;
+    border-bottom: 2px solid #00000026;
+    gap: 8rem;
+}
+.chhosememe-card-img{
+    width: 45%;
+}
+.chhosememe-card-img img{
+    width: 100%;
+}
+.choosemem-card{
+    display: flex;
+    justify-content: space-between;
+    width: 85%;
+}
+.choosememe-cont {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    justify-content: center;
+}
+.choosememe-cont h1{
+    font-size: 3rem;
+    color: #147AA9;
+    font-weight: 400;
+}
+.choosememe-cont h2{
+    font-size: 2.5rem;
+    color: #FC6565;
+    font-weight: 400;
+    border-bottom: 2px solid #00000026;
+    padding-bottom: 1.3rem;
+}
+.choosememe-cont h4{
+    font-size: 2rem;
+}
+.choosememe-cont a{
+    background-color: #147AA9;
+    color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    padding: 1rem 2rem 1rem 2rem;
+    font-size: 2rem;
+    width: fit-content;
+}
+.chooseme-downCont{
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+    padding-top: 8rem;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 8rem;
+}
+.chooseme-downCont h1{
+    font-size: 4rem;
+    font-weight: 500;
+    color: #147AA9;
+}
+.choosememBackImg{
+    width: 100%;
+    object-fit: contain;
+}
+.chooseme-downCont h2{
+    font-size: 5rem;
+    color: #FC6565;
+    font-weight: 500;
+}
+.working-brand {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 70%;
+    flex-wrap: wrap;
+}
+.working-brand img{
+    width: 15%;
+}
+.working-brand :nth-child(1){
+    border-radius:1rem ;
+}
+.choosemem-head{
+    margin-left: 5rem;
+    font-size: 4rem;
+    font-weight: 400;
+    border-bottom: 4px solid #EBB5BB;
+    width: fit-content;
+    border-radius: 1px;
+}
