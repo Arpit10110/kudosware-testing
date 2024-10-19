@@ -19,6 +19,7 @@ import Cart from "./Pages/Cart.jsx";
 import Checkout from "./Pages/Checkout.jsx";
 import Success from "./Pages/Success";
 import Choosemembership from "./Pages/Choosemembership.jsx";
+import Blogs from "./Pages/Blogs.jsx";
 //components
 import  {Protected,UnRProtected} from "./Components/protected/Protected.jsx"
 // Style
@@ -64,6 +65,7 @@ const App = () => {
         <Route path="/checkout" element={<UnRProtected Component={Checkout}/>}  />
         <Route path="/success" element={<Success/>} />
         <Route path="/choose-membership" element={<Choosemembership/>} />
+        <Route path="/blogs" element={<Blogs/>} />
       </Routes>
     </Router>
   );

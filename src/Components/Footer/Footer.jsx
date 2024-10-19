@@ -14,7 +14,7 @@ const Footer = () => {
         <div className="footerCont">
           <div className="footercont1">
             <h2>Our Company</h2>
-            <p>Blog</p>
+            <p onClick={()=>navigate("/blogs")}>Blog</p>
             <p onClick={()=>navigate("/about")} >About Us</p>
             <p>Careers</p>
           </div>
