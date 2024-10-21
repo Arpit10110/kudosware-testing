@@ -1,0 +1,45 @@
+.slider-container {
+    width: 70%;
+    margin: auto;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    margin-top: 5rem;
+}
+.slider-mark {
+  width: 40px;
+  height: 40px;
+}
+
+.spending-info {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.spending-info .average-spent,
+.spending-info .tinyclo {
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.average-spent {
+  background-color: #64c3b8;
+  color: white;
+}
+
+.tinyclo {
+  background-color: #fda8a8;
+  color: white;
+}
+.rc-slider-mark-text {
+    position: absolute;
+    display: inline-block;
+    width: max-content;
+    font-size: 1.5rem;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    margin-top: 4rem;
+}

@@ -21,13 +21,11 @@
     padding: 0.85rem;
     background-color: #D9D9D9;
     border: none;
+    cursor: pointer;
     font-weight: 300;
     border-radius: 10px;
 }
-.sec3btn-div :nth-child(1){
-    background-color: #FCEBA3;
-    font-weight: 400;
-}
+
 .doyouknow{
     background-color: #FFFFFF;
     width: 80%;
@@ -61,6 +59,9 @@
 .sec4btn-div {
     display: flex;
     gap: 4rem;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10rem;
 }
 .sec4btn-div button{
     background-color: #27B09ECC;
