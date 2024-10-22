@@ -3,17 +3,35 @@ import "./StoreCard.css";
 import { useDispatch } from "react-redux";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
-const StoreCard = ({ id, image, title, Buy, Rent }) => {
+const StoreCard = ({ id, image, title, Buy, Rent,tags }) => {
   const dispatch = useDispatch();
 
   const addtocartHandler = (variant) => {
+
+    const tagArray = tags.split(', ');
+    let color = '';
+    let size = '';
+    tagArray.forEach(tag => {
+      if (tag.startsWith('Color:')) {
+        color = tag.split(': ')[1]; // Get the value after "Color:"
+      } else if (tag.startsWith('Size:')) {
+        size = tag.split(': ')[1]; // Get the value after "Size:"
+      }
+    });
+
+
+
+
+
     const data = {
        id: variant.id,  // Use variant ID (either Buy or Rent)
        title: title,
        image: image, 
        price: variant.price,
-       qty: 1
+       qty: 1,
+       size:size
     };
+    console.log(data);
     dispatch({
        type: 'addtocart',
        payload: data

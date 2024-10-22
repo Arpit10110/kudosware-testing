@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import StoreCard from '../Components/StoreCard/StoreCard';
 import Loading from '../Components/Loading/Loading.jsx';
+import FilterStore from '../Components/FilterStore/FilterStore';
+
 const AccessoriesStore = () => {
   const [AllstoreData, SetAllstoreData] = useState([]);
   const [IsLoading ,SetIsLoading] = useState(true);
@@ -24,8 +26,15 @@ const AccessoriesStore = () => {
     console.log('Updated AllstoreData:', AllstoreData);
   }, [AllstoreData]);
 
+  const handleFilterChange = (filters) => {
+    console.log(filters)
+    // fetchStoreData(filters); // Fetch data with applied filters
+  };
+
   return (
     <>
+    <div className='Store-Main-filter' >
+    <FilterStore onFilterChange={handleFilterChange} />
       {
         IsLoading == true ?<Loading/>:<div className='AllStore-main-din' >
           {
@@ -37,8 +46,9 @@ const AccessoriesStore = () => {
           }
         </div>
       }
+    </div>
     </>
   );
-}
+};
 
 export default AccessoriesStore

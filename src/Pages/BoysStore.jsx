@@ -2,43 +2,90 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import StoreCard from '../Components/StoreCard/StoreCard';
 import Loading from '../Components/Loading/Loading.jsx';
+import FilterStore from '../Components/FilterStore/FilterStore';
+
 const BoysStore = () => {
-  const [AllstoreData, SetAllstoreData] = useState([]);
-  const [IsLoading ,SetIsLoading] = useState(true);
-  const getallstore = async () => {
+  const [allStoreData, setAllStoreData] = useState([]);
+  const [filteredStoreData, setFilteredStoreData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null); // State to handle errors
+
+  const getAllStore = async () => {
     try {
       const { data } = await axios.get(`${import.meta.env.VITE_Port}/getboys`);
-      const allstoredata = data.data;
-      SetAllstoreData(allstoredata); 
-      SetIsLoading(false);
-      console.log(allstoredata)
+      const allStoreData = data.data;
+      setAllStoreData(allStoreData);
+      setFilteredStoreData(allStoreData); // Initialize filtered data
+      setIsLoading(false);
+      console.log(allStoreData);
     } catch (error) {
-      console.log(error);
+      console.error("Error fetching data:", error);
+      setError("Failed to load store data. Please try again later."); // Set error message
+      setIsLoading(false);
     }
   };
 
   useEffect(() => {
-    getallstore();
+    getAllStore();
   }, []);
-  useEffect(() => {
-    console.log('Updated AllstoreData:', AllstoreData);
-  }, [AllstoreData]);
+
+  const handleFilterChange = (filters) => {
+    console.log("Received Filters:", filters);
+    const { age, color, minPrice, maxPrice } = filters;
+  
+    const filteredData = allStoreData.filter((item) => {
+      // Split tags to check for colors and sizes (ages)
+      const itemTags = item.tags.split(', ');
+      
+      // Extract colors and sizes (ages) from tags
+      const itemColors = itemTags.filter(tag => tag.startsWith("Colour")).map(tag => tag.split(': ')[1] || tag.split(' ')[1]); // Handles "Colour Red"
+      const itemAges = itemTags.filter(tag => tag.startsWith("Size:")).map(tag => tag.split(': ')[1]);
+  
+      const isAgeMatch = age.length ? age.some(a => itemAges.includes(a)) : true; // Match age if filters are applied
+      const isColorMatch = color.length ? color.some(c => itemColors.includes(c)) : true; // Match color if filters are applied
+      const rentPrice = parseFloat(item.variants[0].price); // Rent price
+      const buyPrice = parseFloat(item.variants[1].price); // Buy price
+  
+      // Check price range for both Rent and Buy
+      const isRentPriceMatch = rentPrice >= minPrice && rentPrice <= maxPrice;
+      const isBuyPriceMatch = buyPrice >= minPrice && buyPrice <= maxPrice;
+  
+      // Return true if the item matches the age, color, and at least one price condition
+      return isAgeMatch && isColorMatch && (isRentPriceMatch || isBuyPriceMatch);
+    });
+  
+    console.log("Filtered Data:", filteredData); // Log the filtered results
+    setFilteredStoreData(filteredData);
+  };
+  
+  
 
   return (
-    <>
-      {
-        IsLoading == true ?<Loading/>:<div className='AllStore-main-din' >
+    <div className='Store-Main-filter'>
+      <FilterStore onFilterChange={handleFilterChange} />
+      {isLoading ? (
+        <Loading />
+      ) : error ? (
+        <div className="error-message">{error}</div> // Display error message
+      ) : (
+        <div className='AllStore-main-din'>
           {
-            AllstoreData.map((i,index)=>{
-              return(
-                <StoreCard key={index} id={i.id} image={i.image.src} title={i.title} Rent={i.variants[0]} Buy={i.variants[1]}  />
-              )
-            })
+            filteredStoreData.map((item) => (
+              <StoreCard
+                key={item.id} // Use item.id as a unique key
+                id={item.id}
+                image={item.image.src}
+                title={item.title}
+                Rent={item.variants[0]}
+                Buy={item.variants[1]}
+                tags={item.tags}
+              />
+            ))
           }
         </div>
-      }
-    </>
+      )}
+    </div>
   );
-}
+};
 
-export default BoysStore
+export default BoysStore;
