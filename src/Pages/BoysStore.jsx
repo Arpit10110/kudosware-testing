@@ -32,25 +32,20 @@ const BoysStore = () => {
   const handleFilterChange = (filters) => {
     console.log("Received Filters:", filters);
     const { age, color, minPrice, maxPrice } = filters;
-  
     const filteredData = allStoreData.filter((item) => {
       // Split tags to check for colors and sizes (ages)
       const itemTags = item.tags.split(', ');
-      
       // Extract colors and sizes (ages) from tags
-      const itemColors = itemTags.filter(tag => tag.startsWith("Colour")).map(tag => tag.split(': ')[1] || tag.split(' ')[1]); // Handles "Colour Red"
+      const itemColors = itemTags.filter(tag => tag.startsWith("Colour:")).map(tag => tag.split(': ')[1] || tag.split(':')[1]); // Handles "Colour Red"
       const itemAges = itemTags.filter(tag => tag.startsWith("Size:")).map(tag => tag.split(': ')[1]);
   
       const isAgeMatch = age.length ? age.some(a => itemAges.includes(a)) : true; // Match age if filters are applied
       const isColorMatch = color.length ? color.some(c => itemColors.includes(c)) : true; // Match color if filters are applied
       const rentPrice = parseFloat(item.variants[0].price); // Rent price
       const buyPrice = parseFloat(item.variants[1].price); // Buy price
-  
-      // Check price range for both Rent and Buy
       const isRentPriceMatch = rentPrice >= minPrice && rentPrice <= maxPrice;
       const isBuyPriceMatch = buyPrice >= minPrice && buyPrice <= maxPrice;
   
-      // Return true if the item matches the age, color, and at least one price condition
       return isAgeMatch && isColorMatch && (isRentPriceMatch || isBuyPriceMatch);
     });
   

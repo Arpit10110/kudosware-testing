@@ -43,7 +43,7 @@ const FilterStore = ({ onFilterChange }) => {
     <div className="filter-form">
       <h4>Select Age</h4>
       <div className="filter-options">
-        {["0-3 months", "3-6 months", "6-12 months", "1-2 years", "2-3 years", "3-4 years"].map((age) => (
+        {["0-3 months", "3-6 months", "6-9 months", "9-12 months", "1-2 years", "2-3 years"].map((age) => (
           <label key={age}>
             <input
               type="checkbox"

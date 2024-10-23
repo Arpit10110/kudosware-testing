@@ -32,8 +32,6 @@ const ScrollToTop = () => {
   useEffect(() => {
     if (!pathname.includes("/store")) {
       window.scrollTo(0, 0);
-    }else{
-      window.scrollTo(500,500);
     }
   }, [pathname]);
 

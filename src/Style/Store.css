@@ -48,6 +48,7 @@
     background-color: #FDF0BA57;
     padding-top: 2rem;
     align-items: flex-start;
+    padding-bottom: 10rem;
 }
 .AllStore-main-din{
     width: 80%;
@@ -70,10 +71,10 @@
     padding: 1rem;
     font-size: 1.8rem;
     width: -webkit-fill-available;
-}.filter-form button{
+}
+.filter-form button{
     font-size: 1.5rem;
     font-weight: 400;
-    /* padding: 1rem 2rem 1rem 2rem; */
     border-radius: 1rem;
     background-color: #147aa940;
     color: #000000;
