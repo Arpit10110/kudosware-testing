@@ -1,6 +1,7 @@
 import React from 'react'
 import Navbar from '../Components/Navbar/Navbar'
 import ProfileBox from '../Components/ProfileBox/ProfileBox.jsx'
+import PAddressBox from '../Components/PAddressBox/PAddressBox.jsx'
 import SignupTopBanner from "../Components/SignupTopBanner/SignupTopBanner"
 import {Link} from "react-router-dom"
 import "../Style/Profile.css"
@@ -22,8 +23,11 @@ const Profile = () => {
         <Link>Swap Your Clothes</Link>
       </div>
       </div>
+      <div className="profile-rightBoxs">
+          <ProfileBox/>
+          <PAddressBox />
+      </div>
     </div>
-   {/* <ProfileBox/> */}
    </>
   )
 }

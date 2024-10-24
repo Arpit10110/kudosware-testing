@@ -1,15 +1,17 @@
 .profile-main {
     padding-top: 5rem;
     padding-bottom: 5rem;
+    display: flex;
+    justify-content: space-evenly;
 }
-.profile-leftBoxs{
+.profile-leftBoxs {
     display: flex;
     flex-direction: column;
     gap: 3rem;
-    padding-left: 3rem;
+    width: 45%;
 }
-.loyalityBox-profile{
-    width: 25%;
+.loyalityBox-profile {
+    width: 80%;
     border: 2px solid #00000014;
     display: flex;
     flex-direction: column;
@@ -23,7 +25,7 @@
     font-weight: 500;
 }
 .loyalityBox-profile p {
-    font-size: 1.5rem;
+    font-size: 2rem;
     padding: 1rem;
     text-align: center;
     color: #0000007A;
@@ -33,8 +35,15 @@
     color: #000000;
     border-radius: 8px;
     padding: 1rem;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
+    font-weight: 500;
     width: fit-content;
     margin: auto;
     margin-bottom: 1rem;
+}
+.profile-rightBoxs {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
 }
