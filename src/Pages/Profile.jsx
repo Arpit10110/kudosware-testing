@@ -1,8 +1,10 @@
 import React from 'react'
 import Navbar from '../Components/Navbar/Navbar'
+import Footer from '../Components/Footer/Footer'
 import ProfileBox from '../Components/ProfileBox/ProfileBox.jsx'
 import PAddressBox from '../Components/PAddressBox/PAddressBox.jsx'
 import SignupTopBanner from "../Components/SignupTopBanner/SignupTopBanner"
+import LoyalityPointsBox from "../Components/LoyalityPointsBox/LoyalityPointsBox.jsx"
 import {Link} from "react-router-dom"
 import "../Style/Profile.css"
 const Profile = () => {
@@ -26,8 +28,10 @@ const Profile = () => {
       <div className="profile-rightBoxs">
           <ProfileBox/>
           <PAddressBox />
+          <LoyalityPointsBox />
       </div>
     </div>
+    <Footer/>
    </>
   )
 }

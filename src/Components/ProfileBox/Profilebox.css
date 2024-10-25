@@ -46,6 +46,22 @@
     align-items: center;
     gap: 2rem;
 }
+.Loyality-deatils{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 1.5rem;
+    gap: 2rem;
+}
+.Loyality-deatils h1{
+    font-weight: 500;
+    font-size: 2.2rem;
+}
+.Loyality-deatils h2{
+    font-weight: 400;
+    font-size: 2rem;
+    color: #0000007A;
+}
 .profilebox-loading{
     min-height: 30vh;
     display: flex;
