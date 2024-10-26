@@ -8,11 +8,11 @@ const StoreCard = ({ id, image, title, Buy, Rent,tags }) => {
 
   const addtocartHandler = (variant) => {
 
-    const tagArray = tags.split(', ');
+    const itemTags = tags.split(', ');
     let color = '';
     let size = '';
-    tagArray.forEach(tag => {
-      if (tag.startsWith('Color:')) {
+    itemTags.forEach(tag => {
+      if (tag.startsWith('Colour:')) {
         color = tag.split(': ')[1]; // Get the value after "Color:"
       } else if (tag.startsWith('Size:')) {
         size = tag.split(': ')[1]; // Get the value after "Size:"

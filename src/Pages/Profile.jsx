@@ -5,6 +5,7 @@ import ProfileBox from '../Components/ProfileBox/ProfileBox.jsx'
 import PAddressBox from '../Components/PAddressBox/PAddressBox.jsx'
 import SignupTopBanner from "../Components/SignupTopBanner/SignupTopBanner"
 import LoyalityPointsBox from "../Components/LoyalityPointsBox/LoyalityPointsBox.jsx"
+import ProOrderList from "../Components/ProOrderList/ProOrderList.jsx"
 import {Link} from "react-router-dom"
 import "../Style/Profile.css"
 const Profile = () => {
@@ -24,6 +25,7 @@ const Profile = () => {
         <p>We know they (out)grow so fast, so we are here when you're ready to swap. Whether you need to exchange a few items that they have outgrown or need a new season refresh, we are here to curate a box that works for your family.</p>
         <Link>Swap Your Clothes</Link>
       </div>
+      <ProOrderList/>
       </div>
       <div className="profile-rightBoxs">
           <ProfileBox/>
