@@ -11,7 +11,6 @@ const ProOrderList = () => {
             const {data}=await axios.post(`${import.meta.env.VITE_Port}/getallorders`,{
                 customerId : User_id
             })
-            console.log(data);
             SetOrderdata(data.data);
         } catch (error) {
             console.error(error)
@@ -40,13 +39,20 @@ const ProOrderList = () => {
                     <span>Total</span>
                 </div>
                 {
-                        Orderdata.map((i)=>{
+                        Orderdata.map((i,index)=>{
+                            const date = new Date(i.processed_at);
+                            const formattedDate = date.toLocaleDateString("en-GB", {
+                              day: "2-digit",
+                              month: "short",
+                              year: "2-digit",
+                            });
+                            const formattedDateWithComma = formattedDate.replace(/(\d{2}\s\w{3})\s(\d{2})/, "$1, $2");
                             return(
-                                <div className='proorder-tablerow' >
-                                    <span>#214</span>
-                                    <span>Date</span>
-                                    <span>Payment Status</span>
-                                    <span>Total</span>
+                                <div className='proorder-tablerowval' key={index} >
+                                    <span>{i.name}</span>
+                                    <span>{formattedDateWithComma}</span>
+                                    <span>Paid</span>
+                                    <span>{parseInt(i.total_price)} INR</span>
                                 </div>
                             )
                         })
