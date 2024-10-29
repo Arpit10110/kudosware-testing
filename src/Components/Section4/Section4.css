@@ -77,3 +77,25 @@
 .sec4btn-div :nth-child(2){
     background-color: #E5635FCC;
 }
+
+
+@media only screen and (width<=600px){
+    .section4 h2 {
+        margin-left: 3rem;
+    }
+    .sec3btn-div {
+        margin-top: 5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }
+    .sec3btn-div button {
+        font-size: 1.8rem;
+    }
+
+    .sec4-cont p {
+        width: 100%;
+    }
+  
+}

@@ -64,3 +64,19 @@
 .section-Img img{
     width: 100%;
 }
+
+
+@media only screen and (width<=600px){
+    
+    .section1 {
+        flex-direction: column;
+        gap: 3rem;
+    }
+    .section1-cont {
+        width: 100%;
+        margin-top: 5rem;
+    }
+    .section-Img {
+        width: 100%;
+    }
+}

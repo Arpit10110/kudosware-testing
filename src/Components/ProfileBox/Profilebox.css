@@ -38,6 +38,15 @@
     border-radius: 5px;
     font-size: 1.5rem;
 }
+.editprofile-div a{
+    background-color: #147AA9;
+    color: white;
+    padding: 0.7rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.5rem;
+}
 .profilebox-deatils{
     display: flex;
     flex-wrap: wrap;

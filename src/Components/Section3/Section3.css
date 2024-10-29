@@ -82,3 +82,25 @@
     font-weight: 500;
     border: none;
 }
+
+
+@media only screen and (width<=600px) {
+    .section3 h2 {
+        margin-left: 3rem;
+        font-size: 4rem;
+    }
+    .section3-Img video {
+        width: 90%;
+    }
+    .section3-ContBox {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 5rem;
+    }
+    .sec3box {
+        width: 80%;
+    }
+    .sec3btn {
+        margin-top: 5rem;
+    }
+}

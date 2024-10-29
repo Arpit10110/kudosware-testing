@@ -4,6 +4,7 @@ import {useSelector,useDispatch} from "react-redux"
 import "./Profilebox.css"
 import {useNavigate} from "react-router-dom"
 import EditIcon from '@mui/icons-material/Edit';
+import { Link } from 'react-router-dom'
 const ProfileBox = () => {
     const navigate = useNavigate();
     const dispatch  = useDispatch()
@@ -40,7 +41,7 @@ const ProfileBox = () => {
                 <h1>Personal <span>Information</span></h1>
                 <div className='editprofile-div' >
                 <EditIcon className='editprofile-icon' />
-                <button>Update Password</button>
+                <Link to="/updatepassword" >Update Password</Link>
                 </div>
             </div>
             {

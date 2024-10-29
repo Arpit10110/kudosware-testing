@@ -17,16 +17,17 @@
     position: relative;
 }
 .sec2-cot1-img {
-    width: 60%;
-    position: relative;
-    top: -7rem;
+    width: 45%;
+    position: absolute;
+    bottom: 0rem;
+    right: 1rem;
 }
 .sec2-cot1-img img{
     width: 100%;
-    object-fit: none;
+    object-fit: fill;
 }
 .sec2-cot-img {
-    width: 60%;
+    width: 55%;
     position: absolute;
     height: fit-content;
     display: flex;
@@ -58,22 +59,54 @@
     border-radius: 5px;
 }
 .sec2-cat2 {
+    position: relative;
     display: flex;
     background-color: #DF88929E;
     width: 30%;
     border-radius: 1rem;
-    justify-content: space-around;
+    justify-content: left;
     height: 20vh;
     flex-direction: row-reverse;
     padding: 1rem;
 }
 .sec2-cat3 {
+    position: relative;
     display: flex;
     background-color: #2CA06E4D;
     width: 30%;
     border-radius: 1rem;
-    justify-content: space-around;
+    justify-content: left;
     height: 20vh;
     flex-direction: row-reverse;
     padding: 1rem;
+}
+
+
+@media only  screen and (width<=600px) {
+    .section2 {
+        display: flex;
+        justify-content: space-between;
+        padding-left: 0rem;
+        padding-right: 0rem;
+        padding-bottom: 5rem;
+        flex-direction: column;
+        padding-top: 8rem;
+        align-items: center;
+        gap: 4rem;
+    }
+    .sec2-cat1 {
+        width: 85%;
+    }
+    .sec2-cot-img {
+        width: 45%;
+    }
+    .sec2-cat2 {
+        width: 85%;
+    }
+    .sec2-cot1-img {
+        width: 45%;
+    }
+    .sec2-cat3 {
+        width: 85%;
+    }
 }

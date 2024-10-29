@@ -20,6 +20,7 @@ import Checkout from "./Pages/Checkout.jsx";
 import Success from "./Pages/Success";
 import Choosemembership from "./Pages/Choosemembership.jsx";
 import Blogs from "./Pages/Blogs.jsx";
+import UpadatePassword from "./Pages/UpadatePassword.jsx";
 //components
 import  {Protected,UnRProtected} from "./Components/protected/Protected.jsx"
 // Style
@@ -51,6 +52,7 @@ const App = () => {
         <Route path="/signup" element={<Protected Component={Signup} />} />
         <Route path="/fpassword" element={<Protected Component={Fpassword} />} />
         <Route path="/profile" element={<UnRProtected Component={Profile}/>} />
+        <Route path="/updatepassword" element={<UpadatePassword/>} />
         <Route path="/successignup" element={<SuccesSignup/>} />
         <Route path="/store" element={<Store/>}>
           <Route path="/store" element={<AllStore/>} />

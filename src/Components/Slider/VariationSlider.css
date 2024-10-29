@@ -1,10 +1,10 @@
 .slider-container {
-    width: 70%;
-    margin: auto;
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-    margin-top: 5rem;
+  width: 70%;
+  margin: auto;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  margin-top: 5rem;
 }
 .slider-mark {
   width: 40px;
@@ -34,12 +34,46 @@
   color: white;
 }
 .rc-slider-mark-text {
-    position: absolute;
-    display: inline-block;
-    width: max-content;
-    font-size: 1.5rem;
+  position: absolute;
+  display: inline-block;
+  width: max-content;
+  font-size: 1.5rem;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  margin-top: 4rem;
+}
+
+@media only screen and (width<=600px) {
+  .slider-container {
+    width: 85%;
+    margin: auto;
+    display: flex;
     text-align: center;
-    vertical-align: middle;
-    cursor: pointer;
-    margin-top: 4rem;
+    flex-direction: column;
+    margin-top: 2rem;
+  }
+  .rc-slider {
+    width: 100%;
+    height: 0px;
+    margin-top: 2rem;
+    padding: 0px 0;
+  }
+  .rc-slider-handle {
+    height: 10vw;
+    width: 10vw;
+  }
+  .rc-slider-mark-text {
+    font-size: 1.5rem;
+    width: min-content;
+    margin-top: 2rem;
+  }
+  .sec4btn-div button {
+    background-color: #27b09ecc;
+    color: white;
+    padding: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    font-size: 1.5rem;
+  }
 }
