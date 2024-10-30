@@ -85,3 +85,21 @@
 .another-pp{
     background-color: #FC6565 !important;
 }
+
+
+@media only  screen and (width<=600px){
+    .section5 h2 {
+        margin-left: 3rem;
+    }
+    .sec5box-div {
+        padding-left: 0rem;
+        padding-right: 0rem;
+        gap: 5rem;
+        margin-top: 5rem;
+        flex-direction: column;
+        align-items: center;
+    }
+    .sec5box {
+        width: 90%;
+    }
+}
