@@ -202,3 +202,78 @@
     color: white;
     border: none;
 }
+
+
+
+@media only screen and (width<=600px) {
+    .clean-sec1 {
+        flex-direction: column;
+        gap: 2rem;
+        padding-top: 4rem;
+    }
+    .clean-sec1-cont {
+        width: 90%;
+    }
+    .clean-sec1-img {
+        width: 75%;
+    }
+    .clean-sec2 p {
+        width: 80%;
+        text-align: center;
+    }
+    .clean-sec3 img {
+        width: 90%;
+    }
+    .clean-sec5-box1 {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+    .clean-sec5-box1-cont, .clean-sec5-box2-cont {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .clean-sec5-box1-img {
+        width: 90%;
+    }
+    .clean-sec5-box2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .clean-sec6 {
+        padding-bottom: 5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        flex-direction: column;
+    }
+    .clean-sec6 a {
+        width: fit-content;
+    }
+    .clean-sec7 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        background-color: #f1bac0;
+        flex-direction: column;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        margin-top: 0rem;
+        margin-bottom: 10rem;
+    }
+    .clean-sec7-Input {
+        width: 80%;
+    }
+    .clean-sec7 h5 {
+        text-align: center;
+    }
+    .clean-sec7-Input input {
+        padding: 1.3rem 0.2rem;
+    }
+}
