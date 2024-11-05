@@ -68,3 +68,21 @@
     border: none;
     width: 100%;
 }
+
+@media only   screen and (width<=600px){
+    .contact-div {
+        display: flex;
+        padding-left: 0rem;
+        padding-right: 0rem;
+        margin-top: 5rem;
+        flex-direction: column;
+        align-items: center;
+    }
+    .contactbox {
+        width: 90%;
+        padding: 2rem;
+    }
+    .contactImg {
+        width: 50%;
+    }
+}

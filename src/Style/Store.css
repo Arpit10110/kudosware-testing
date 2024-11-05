@@ -83,3 +83,34 @@
     cursor: pointer;
     padding: 1rem;
 }
+
+@media only screen and (width<=600px) {
+    .store-top-banner img {
+        width: 100%;
+        object-position: center;
+        height: 15vh;
+        object-fit: cover;
+    }
+    .store-nav {
+        display: flex;
+        justify-content: center;
+        margin-top: 4rem;
+        row-gap: 2rem;
+        flex-wrap: wrap;
+        column-gap: 4rem;
+        align-items: center;
+    }
+    .store-link img {
+        width: 8vw;
+    }
+    .filter-form{
+        display: none;
+    }
+    .AllStore-main-din {
+        width: 100%;
+        justify-content: space-evenly;
+    }
+    .store-card {
+        width: 40%;
+    }
+}

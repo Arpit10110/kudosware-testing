@@ -27,7 +27,7 @@ const Navbar = () => {
       </div>
       <nav>
         <div className="logo">
-          <img onClick={()=>navigate("/")} src={logo} alt="logo" />
+          <img onClick={() => navigate("/")} src={logo} alt="logo" />
         </div>
         <div className="midlenav-links">
           <NavLink to="/">Home</NavLink>
@@ -68,25 +68,73 @@ const Navbar = () => {
             }}
           >
             <div className="all-links">
-              <NavLink to="/">Home</NavLink>
-              <HashLink to="/#rent">Why Rent?</HashLink>
-              <NavLink to="/clean-out-closet">Clean Out Closet</NavLink>
-              <NavLink to="/about">About Us</NavLink>
-              <NavLink to="/store">Store</NavLink>
-              <HashLink to="/#contact">Contact Us</HashLink>
-              <Link to="/cart" className="cart-link">
+              <NavLink
+                onClick={() => {
+                  setOpen(false);
+                }}
+                to="/"
+              >
+                Home
+              </NavLink>
+              <HashLink
+                onClick={() => {
+                  setOpen(false);
+                }}
+                to="#rent"
+              >
+                Why Rent?
+              </HashLink>
+              <NavLink
+                onClick={() => {
+                  setOpen(false);
+                }}
+                to="/clean-out-closet"
+              >
+                Clean Out Closet
+              </NavLink>
+              <NavLink
+                onClick={() => {
+                  setOpen(false);
+                }}
+                to="/about"
+              >
+                About Us
+              </NavLink>
+              <NavLink
+                onClick={() => {
+                  setOpen(false);
+                }}
+                to="/store"
+              >
+                Store
+              </NavLink>
+              <HashLink
+                onClick={() => {
+                  setOpen(false);
+                }}
+                to="#contact"
+              >
+                Contact Us
+              </HashLink>
+              <Link
+                onClick={() => {
+                  setOpen(false);
+                }}
+                to="/cart"
+                className="cart-link"
+              >
                 <ShoppingCartIcon className="cart-icon" />
                 <span>{Cart.length}</span>
               </Link>
               {User_id == "" ? (
-            <Link to="/login">Login/Sign Up</Link>
-        ) : (
-          <div className="Profile-link">
-            <Link to="/profile">
-              <PersonIcon className="profile-icon" />{" "}
-            </Link>
-          </div>
-        )}
+                <Link to="/login">Login/Sign Up</Link>
+              ) : (
+                <div className="Profile-link">
+                  <Link to="/profile">
+                    <PersonIcon className="profile-icon" />{" "}
+                  </Link>
+                </div>
+              )}
             </div>
           </Drawer>
         </div>

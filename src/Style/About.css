@@ -89,3 +89,29 @@
     font-size: 2rem;
     font-weight: 300;
 }
+
+
+@media only   screen and (width<=600px){
+    .about-top {
+        position: relative;
+        height: 18vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .about-back {
+        height: inherit;
+    }
+    .about-div {
+        padding-left: 0rem;
+        align-items: center;
+        gap: 20rem;
+        justify-content: center;
+    }
+    .about-Img{
+        display: none;
+    }
+    .about-main-cont {
+        width: 95%;
+    }
+}

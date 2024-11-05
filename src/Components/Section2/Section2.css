@@ -96,17 +96,20 @@
     }
     .sec2-cat1 {
         width: 85%;
+        height: 12vh;
     }
     .sec2-cot-img {
         width: 45%;
     }
     .sec2-cat2 {
         width: 85%;
+        height: 15vh;
     }
     .sec2-cot1-img {
         width: 45%;
     }
     .sec2-cat3 {
         width: 85%;
+        height: 18vh;
     }
 }

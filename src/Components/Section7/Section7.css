@@ -27,3 +27,25 @@
 .section7Img :nth-child(5){
     width: 20%;
 }
+
+@media only  screen and (width<=600px){
+    .section7 h2 {
+        margin-left: 3rem;
+    }
+    .section7Img {
+        padding-left: 0rem;
+        padding-right: 0rem;
+        display: flex;
+        justify-content: space-between;
+        width: 95%;
+        align-items: center;
+        margin: auto;
+        margin-top: 5rem;
+    }
+    .section7Img :nth-child(1) {
+        width: 20%;
+    }
+    .section7Img Img {
+        width: 12%;
+    }
+}
