@@ -47,3 +47,23 @@
     flex-direction: column;
     gap: 4rem;
 }
+
+@media only screen and (width<=600px) {
+    .profile-main {
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 5rem;
+        flex-direction: column-reverse;
+        justify-content: space-evenly;
+    }
+    .profile-leftBoxs {
+        width: 96%;
+    }
+    .profile-rightBoxs {
+        width: 96%;
+    }
+    .loyalityBox-profile {
+        width: 100%;
+    }
+   
+}

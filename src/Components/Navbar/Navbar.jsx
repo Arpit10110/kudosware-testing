@@ -46,7 +46,7 @@ const Navbar = () => {
             <Link to="/login">Login/Sign Up</Link>
           </div>
         ) : (
-          <div className="Profile-link">
+          <div className="Profile-link" id="Profile-link" >
             <Link to="/profile">
               <PersonIcon className="profile-icon" />{" "}
             </Link>

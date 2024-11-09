@@ -59,3 +59,9 @@
    color: #44CF09;
    font-weight: 600;
 }
+
+@media only screen and (width<=600px) {
+    .Orderbox-main {
+        width: 100%;
+    }
+}

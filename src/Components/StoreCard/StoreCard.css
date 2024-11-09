@@ -30,3 +30,9 @@
     background-color: #FCEBA3;
     color: black;
 }
+
+@media only screen and (width<=600px) {
+    .store-card {
+        width: 40%;
+    }
+}

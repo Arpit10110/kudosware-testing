@@ -19,12 +19,11 @@ const Blogs = () => {
   const [isLoading, SetIsLoading] = useState(true);
   const handleClickOpen = () => {
     setOpen(true);
-  };
+};
 
-  const handleClose = () => {
+const handleClose = () => {
     setOpen(false);
-  };
-
+};
   // Function to format date as '22th July, 2023'
   const getFormattedDate = () => {
     const date = new Date();
