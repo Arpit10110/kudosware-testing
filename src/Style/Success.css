@@ -18,3 +18,12 @@
     border: none;
     border-radius: 1rem;
 }
+
+@media only screen and (width<=600px){
+    .Success-main {
+        height: 70vh;
+    }
+    .Success-main h2 {
+        font-size: 2.7rem;
+    }
+}

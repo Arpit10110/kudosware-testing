@@ -80,7 +80,7 @@ const Navbar = () => {
                 onClick={() => {
                   setOpen(false);
                 }}
-                to="#rent"
+                to="/#rent"
               >
                 Why Rent?
               </HashLink>
@@ -112,7 +112,7 @@ const Navbar = () => {
                 onClick={() => {
                   setOpen(false);
                 }}
-                to="#contact"
+                to="/#contact"
               >
                 Contact Us
               </HashLink>
