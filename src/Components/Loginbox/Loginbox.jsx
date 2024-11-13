@@ -7,13 +7,17 @@ import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {useDispatch} from "react-redux"
+import Backdrop from '@mui/material/Backdrop';
+import CircularProgress from '@mui/material/CircularProgress';
 const Loginbox = () => {
   const navigate= useNavigate();
   const dispatch=useDispatch()
   const [Email , setEmail]=useState("");
   const [Password , setPassword]=useState("");
+  const [open, setOpen] = React.useState(false);
   const submitlogin =async(e)=>{
     e.preventDefault();
+    setOpen(true);
     try {
       const {data} = await axios.post(`${import.meta.env.VITE_Port}/login`,{
         Email : Email,
@@ -21,6 +25,7 @@ const Loginbox = () => {
       })
       console.log("this is the output",data);
       if(data.status== false){
+        setOpen(false);
         toast.error(data.message, {
           position: "top-right",
           autoClose: 5000, 
@@ -33,6 +38,7 @@ const Loginbox = () => {
           });
       }else{
         const shopifydata=data.data;
+         setOpen(false);
         navigate("/");
         dispatch({
           type:"Profile",
@@ -50,6 +56,14 @@ const Loginbox = () => {
   return (
   <>
   <div className="loginbox-main">
+
+      <Backdrop
+        sx={(theme) => ({ color: '#fff', zIndex: theme.zIndex.drawer + 1 })}
+        open={open}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
+
     <form  onSubmit={submitlogin} className="loginbox">
         <div className='login-div-input'>
           <h3>Enter Your Email ID</h3>
@@ -65,6 +79,12 @@ const Loginbox = () => {
           <Link to="/signup" >Create Account</Link>
         </div>
     </form>
+
+
+
+
+
+
     <ToastContainer
 position="top-right"
 autoClose={5000}

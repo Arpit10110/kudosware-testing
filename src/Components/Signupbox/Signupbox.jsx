@@ -5,7 +5,8 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import Backdrop from '@mui/material/Backdrop';
+import CircularProgress from '@mui/material/CircularProgress';
 const Signupbox = () => {
   const navigate = useNavigate();
   const [Fname, setFname] = useState('');
@@ -17,6 +18,7 @@ const Signupbox = () => {
   const [PostalCode, setPostalCode] = useState('');
   const [City, setCity] = useState('');
   const [State, setState] = useState('');
+  const [open, setOpen] = React.useState(false);
 
   // Handle Postal Code change
   const handlePostalCodeChange = async (e) => {
@@ -53,6 +55,7 @@ const Signupbox = () => {
 
   const submithandel = async (e) => {
     e.preventDefault();
+    setOpen(true);
     try {
       const address = [
         {
@@ -76,6 +79,7 @@ const Signupbox = () => {
       });
 
       if (data.status === false) {
+        setOpen(false);
         toast.error(data.message, {
           position: "top-right",
           autoClose: 5000,
@@ -87,6 +91,7 @@ const Signupbox = () => {
           theme: "colored",
         });
       } else {
+        setOpen(false);
         navigate("/successignup");
       }
     } catch (error) {
@@ -97,6 +102,12 @@ const Signupbox = () => {
   return (
     <>
       <div className="loginbox-main">
+      <Backdrop
+        sx={(theme) => ({ color: '#fff', zIndex: theme.zIndex.drawer + 1 })}
+        open={open}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
         <form onSubmit={submithandel} className="loginbox">
           <div className="login-div-input">
             <h3>Full Name</h3>
@@ -182,6 +193,7 @@ const Signupbox = () => {
             <Link to="/login">Login</Link>
           </div>
         </form>
+
         <ToastContainer
           position="top-right"
           autoClose={5000}
