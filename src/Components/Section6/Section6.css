@@ -43,6 +43,7 @@
 .sec6-btn button {
     background-color: #1A95CF;
     color: white;
+    cursor: pointer;
     padding: 1rem;
     font-size: 2.5rem;
     border: none;

@@ -45,16 +45,17 @@ const SliderCompo = ({cont,Slidevalue}) => {
             marginLeft: "-1rem",
             marginTop: "-3rem",
             backgroundImage: `url(${sliderbackground})`,
-            backgroundSize: 'cover',
-            opacity: "100%"
+            opacity: "100%",
+            backgroundRepeat:"no-repeat",
+            backgroundPosition : "center",
           }}
           trackStyle={{ backgroundColor: '#64c3b8' }}
           railStyle={{ backgroundColor: '#f0f0f0' }}
         />
       </div>
       <div className="sec4btn-div">
-        <button>AVERAGE SPENT: ${ageGroups[selectedIndex].AverageSpent}</button>
-        <button>TINYCLO: ${ageGroups[selectedIndex].TinyClo}</button>
+        <button>AVERAGE SPENT: ₹{ageGroups[selectedIndex].AverageSpent}</button>
+        <button>TINYCLO: ₹{ageGroups[selectedIndex].TinyClo}</button>
       </div>
     </div>
   );

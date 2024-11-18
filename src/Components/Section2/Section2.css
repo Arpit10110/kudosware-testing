@@ -56,7 +56,14 @@
     width: fit-content;
     padding: 0.5rem;
     font-weight: 450;
+    display: flex;
+    cursor: pointer;
+    gap: 3px;
     border-radius: 5px;
+}
+.sec2-cont h5 span{
+  position: relative;
+  top: 10%;
 }
 .sec2-cat2 {
     position: relative;

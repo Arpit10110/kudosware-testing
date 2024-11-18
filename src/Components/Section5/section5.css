@@ -60,6 +60,7 @@
 }
 .sec5cont2 button{
     background-color: #1A95CF;
+    cursor: pointer;
     color: white;
     padding: 1rem;
     font-size: 1.3rem;
@@ -69,6 +70,7 @@
 .sec5cont2-another button{
     background-color: #1A95CF;
     color: white;
+    cursor: pointer;
     padding: 1rem;
     font-size: 1.3rem;
     border: none;

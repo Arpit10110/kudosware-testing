@@ -2,7 +2,9 @@ import React from 'react'
 import "./Section6.css"
 //img
 import sec6Img from "../../assets/sec6Img.png"
+import { useNavigate } from 'react-router-dom'
 const Section6 = () => {
+  const  naviagte  = useNavigate();
   return (
     <>
     <div className="section6">
@@ -14,7 +16,7 @@ const Section6 = () => {
                 <p>Clothes that are no longer in rentable condition are either donated or recycled. So you can take comfort knowing that we’ll do all we can to give clothes a new lease of life, with no clothes ever going to landfill</p>
                 </div>
                 <div className="sec6-btn">
-                <button>Start Membership</button>
+                <button onClick={()=>naviagte("/choose-membership")} >Start Membership</button>
             </div>
             </div>
             <div className="sec6Img">
