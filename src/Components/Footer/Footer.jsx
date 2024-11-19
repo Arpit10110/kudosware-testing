@@ -16,12 +16,11 @@ const Footer = () => {
             <h2>Our Company</h2>
             <p onClick={()=>navigate("/blogs")}>Blog</p>
             <p onClick={()=>navigate("/about")} >About Us</p>
-            <p>Careers</p>
           </div>
           <div className="footercont1">
 
             <h2>PRODUCTS</h2>
-            <p onClick={()=>navigate("/about")} >Subscription Plans</p>
+            <p onClick={()=>navigate("/choose-membership")} >Subscription Plans</p>
             <p onClick={()=>navigate("/store")} >Clothing</p>
             <p onClick={()=>navigate("/store/accessories")} >Equipments</p>
             <p onClick={()=>navigate("/store/toys")} >Toys</p>
