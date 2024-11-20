@@ -5,6 +5,7 @@ import "./Profilebox.css"
 import {useNavigate} from "react-router-dom"
 import EditIcon from '@mui/icons-material/Edit';
 import { Link } from 'react-router-dom'
+import Loading from '../Loading/Loading'
 const ProfileBox = () => {
     const navigate = useNavigate();
     const dispatch  = useDispatch()
@@ -45,9 +46,7 @@ const ProfileBox = () => {
                 </div>
             </div>
             {
-                isLoading === true ? <div className="profilebox-loading">
-                    <h1>Loading...</h1>
-                 </div>:
+                isLoading === true ?<Loading/>:
             <div className="profilebox-deatils">
                 <div className="profilebox-cont">
                 <h1>Name surname</h1>

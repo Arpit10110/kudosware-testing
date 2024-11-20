@@ -18,11 +18,6 @@ const StoreCard = ({ id, image, title, Buy, Rent,tags }) => {
         size = tag.split(': ')[1]; // Get the value after "Size:"
       }
     });
-
-
-
-
-
     const data = {
        id: variant.id,  // Use variant ID (either Buy or Rent)
        title: title,

@@ -79,7 +79,7 @@ const Cart = () => {
                   <div className="cart-item-cont">
                     <h4>{i.title}</h4>
                     {/* Assuming you will dynamically display the size */}
-                    <h4>Size: {i.size ? i.size : 'N/A'}</h4>
+                    <h4>Size: ({i.size ? i.size : 'N/A'})</h4>
                     <h4>₹{i.price}</h4>
                     <div className="cart-controller">
                         <div className="cart-qty">

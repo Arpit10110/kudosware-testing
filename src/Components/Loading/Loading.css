@@ -1,6 +1,7 @@
 .Loading-div{
-    height: 80vh;
+    /* height: 80vh; */
     display: flex;
+    width: inherit;
     justify-content: center;
     align-items: center;
     font-size: 3rem;

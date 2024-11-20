@@ -3,15 +3,18 @@ import "./PAddressBox.css"
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import { useSelector } from 'react-redux';
 import axios from 'axios';
+import Loading from '../Loading/Loading';
 const PAddressBox = () => {
   const { User_id } = useSelector((state) => state.tinyclodeatil || {});
   const [savedAddresses, setSavedAddresses] = useState([]);
+  const [IsLoading,SetIsLoading]=useState(true);
   const getaddress = async()=>{
     try {
       const { data } = await axios.post(`${import.meta.env.VITE_Port}/profile`, {
         userid: User_id,
       });
       setSavedAddresses(data.data.addresses);
+      SetIsLoading(false);
     } catch (error) {
       console.error(error);
     }
@@ -30,6 +33,8 @@ const PAddressBox = () => {
                 <AddCircleIcon className='add-icon' />
                 </div>
             </div>
+            {
+              IsLoading?<Loading/>:
             <div className="shiipping-deatils">
                   {
                     savedAddresses.map((i,index)=>{
@@ -42,6 +47,7 @@ const PAddressBox = () => {
                     })
                   }
             </div>
+            }
         </div>
     </>
   )
