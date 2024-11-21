@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import Checkbox from "@mui/material/Checkbox"; // Import Checkbox from Material UI
 import "../Style/Checkout.css";
-
+import Loading from "../Components/Loading/Loading";
 const Checkout = () => {
   const dispatch = useDispatch();
   const { User_id } = useSelector((state) => state.tinyclodeatil || {});
@@ -177,7 +177,7 @@ const Checkout = () => {
             {!showNewAddress ? (
               isLoading ? (
                 <div className="loading-checkout">
-                  <h1>Loading...</h1>
+                  <Loading/>
                 </div>
               ) : (
                 <div className="saved-addresses">

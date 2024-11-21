@@ -52,7 +52,7 @@ const BoysStore = () => {
     console.log("Filtered Data:", filteredData); // Log the filtered results
     setFilteredStoreData(filteredData);
   };
-  
+   
   
 
   return (
