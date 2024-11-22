@@ -13,12 +13,12 @@ const Signupbox = () => {
   const [Email, setEmail] = useState('');
   const [Phone, setPhone] = useState('');
   const [Password, setPassword] = useState('');
-  const [Address1, setAddress1] = useState('');
-  const [Landmark, setLandmark] = useState('');
-  const [PostalCode, setPostalCode] = useState('');
-  const [City, setCity] = useState('');
-  const [State, setState] = useState('');
-  const [open, setOpen] = React.useState(false);
+  const [Address1, setAddress1] = useState(' ');
+  const [Landmark, setLandmark] = useState(' ');
+  const [PostalCode, setPostalCode] = useState(' ');
+  const [City, setCity] = useState(' ');
+  const [State, setState] = useState(' ');
+  const [open, setOpen] = useState(false);
 
   // Handle Postal Code change
   const handlePostalCodeChange = async (e) => {
@@ -57,7 +57,14 @@ const Signupbox = () => {
     e.preventDefault();
     setOpen(true);
     try {
-      const address = [
+      let value = false;
+      if (Address1.trim() === '' || PostalCode.trim() === '' || State.trim() === '' || City.trim() === '') {
+        value=false;
+      } else {
+         value =true;
+      }
+      
+      const address = [ 
         {
           address1: Address1,
           city: City,
@@ -75,9 +82,10 @@ const Signupbox = () => {
         Email,
         Phone,
         Password,
-        address
+        address,
+        AddressGiven:value
       });
-
+      console.log(data);
       if (data.status === false) {
         setOpen(false);
         toast.error(data.message, {
@@ -110,7 +118,7 @@ const Signupbox = () => {
       </Backdrop>
         <form onSubmit={submithandel} className="loginbox">
           <div className="login-div-input">
-            <h3>Full Name</h3>
+            <h3>Full Name<span>*</span></h3>
             <input
               type="text"
               onChange={(e) => setFname(e.target.value)}
@@ -118,7 +126,7 @@ const Signupbox = () => {
             />
           </div>
           <div className="login-div-input">
-            <h3>Phone no.</h3>
+            <h3>Phone no.<span>*</span></h3>
             <input
               type="text"
               onChange={(e) => setPhone(e.target.value)}
@@ -126,7 +134,7 @@ const Signupbox = () => {
             />
           </div>
           <div className="login-div-input">
-            <h3>Email</h3>
+            <h3>Email<span>*</span></h3>
             <input
               type="text"
               onChange={(e) => setEmail(e.target.value)}
@@ -134,7 +142,7 @@ const Signupbox = () => {
             />
           </div>
           <div className="login-div-input">
-            <h3>Create Password</h3>
+            <h3>Create Password<span>*</span></h3>
             <input
               type="password"
               onChange={(e) => setPassword(e.target.value)}
@@ -146,7 +154,6 @@ const Signupbox = () => {
             <input
               type="text"
               onChange={(e) => setAddress1(e.target.value)}
-              required
             />
           </div>
           <div className="signup-div-main">
@@ -155,7 +162,6 @@ const Signupbox = () => {
               <input
                 type="text"
                 onChange={(e) => setLandmark(e.target.value)}
-                required
               />
             </div>
             <div className="signup-div-input">
@@ -164,7 +170,6 @@ const Signupbox = () => {
                 type="text"
                 value={PostalCode}
                 onChange={handlePostalCodeChange}
-                required
               />
             </div>
           </div>
@@ -175,7 +180,6 @@ const Signupbox = () => {
                 type="text"
                 value={City}
                 onChange={(e) => setCity(e.target.value)}
-                required
               />
             </div>
             <div className="signup-div-input">
@@ -184,7 +188,6 @@ const Signupbox = () => {
                 type="text"
                 value={State}
                 onChange={(e) => setState(e.target.value)}
-                required
               />
             </div>
           </div>

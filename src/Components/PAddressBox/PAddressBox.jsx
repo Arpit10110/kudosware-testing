@@ -13,8 +13,11 @@ const PAddressBox = () => {
       const { data } = await axios.post(`${import.meta.env.VITE_Port}/profile`, {
         userid: User_id,
       });
-      setSavedAddresses(data.data.addresses);
-      SetIsLoading(false);
+      let x= data.data.addresses;
+      if(x.length == 0){
+        setSavedAddresses(data.data.addresses);
+        SetIsLoading(false);
+      }
     } catch (error) {
       console.error(error);
     }
@@ -35,18 +38,23 @@ const PAddressBox = () => {
             </div>
             {
               IsLoading?<Loading/>:
-            <div className="shiipping-deatils">
-                  {
-                    savedAddresses.map((i,index)=>{
-                      return(
-                        <div className='shipingbox' key={index} >
-                          <h1>Address-{index+1}</h1>
-                          <p>{i.address1}, {i.city}, {i.province}, {i.zip}, {i.country}</p>
-                        </div>
-                      )
-                    })
-                  }
-            </div>
+              <>
+                {
+                  savedAddresses.length == 0 ? <div className='no-saved-add' ><h1>No Saved Address</h1></div>:
+                <div className="shiipping-deatils">
+                      {
+                        savedAddresses.map((i,index)=>{
+                          return(
+                            <div className='shipingbox' key={index} >
+                              <h1>Address-{index+1}</h1>
+                              <p>{i.address1}, {i.city}, {i.province}, {i.zip}, {i.country}</p>
+                            </div>
+                          )
+                        })
+                      }
+                </div>
+                }
+              </>
             }
         </div>
     </>

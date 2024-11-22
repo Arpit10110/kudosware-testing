@@ -13,6 +13,9 @@
     font-size: 1.8rem;
     font-weight: 400;
 }
+.login-div-input h3 span{
+  color: red;
+}
 .signup-div-input input{
     padding: 0.4rem;
     font-size: 2rem;

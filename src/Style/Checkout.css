@@ -89,6 +89,12 @@
   margin-top: 0ren !important;
 }
 
+.saved-addresses h1{
+  font-weight: 600;
+  font-size: 2.5rem;
+  color: #147AA9;
+}
+
 @media only screen and (width<=600px) {
   .inner-checkout-div {
     display: flex;

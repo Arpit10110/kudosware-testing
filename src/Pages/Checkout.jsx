@@ -180,6 +180,11 @@ const Checkout = () => {
                   <Loading/>
                 </div>
               ) : (
+                <>
+                { 
+                  savedAddresses.length == 0 ? <div className="saved-addresses">
+                    <h1>No Saved Address</h1>
+                  </div>:
                 <div className="saved-addresses">
                   {savedAddresses.map((address, index) => (
                     <div
@@ -201,6 +206,8 @@ const Checkout = () => {
                     </div>
                   ))}
                 </div>
+                }
+                </>
               )
             ) : (
               <div className="new-address-form">
