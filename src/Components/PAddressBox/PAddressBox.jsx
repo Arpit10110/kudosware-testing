@@ -13,11 +13,8 @@ const PAddressBox = () => {
       const { data } = await axios.post(`${import.meta.env.VITE_Port}/profile`, {
         userid: User_id,
       });
-      let x= data.data.addresses;
-      if(x.length == 0){
         setSavedAddresses(data.data.addresses);
         SetIsLoading(false);
-      }
     } catch (error) {
       console.error(error);
     }
@@ -40,7 +37,7 @@ const PAddressBox = () => {
               IsLoading?<Loading/>:
               <>
                 {
-                  savedAddresses.length == 0 ? <div className='no-saved-add' ><h1>No Saved Address</h1></div>:
+                  savedAddresses.length === 0 ? <div className='no-saved-add' ><h1>No Saved Address</h1></div>:
                 <div className="shiipping-deatils">
                       {
                         savedAddresses.map((i,index)=>{
