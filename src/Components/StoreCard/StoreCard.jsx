@@ -50,7 +50,9 @@ const StoreCard = ({ id, image, title, Buy, Rent,tags }) => {
   return (
     <>
       <div className="store-card">
-        <img src={image} alt={title} />
+        <div className='store-card-image' >
+        <img  src={image} alt={title} />
+        </div>
         <h3>{title}</h3>
         {/* Passing Buy and Rent specific details to addtocartHandler */}
         <button onClick={() => addtocartHandler(Buy)}>Buy Now @{Buy.price} INR</button>
