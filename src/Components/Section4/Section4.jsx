@@ -31,20 +31,20 @@ const Section4 = () => {
         { age: '18-24 months', AverageSpent: "₹72K", TinyClo: "₹24K" },
     ]
     const envsavingval = [
-        {age: '0-3 months', TinyClo: "1 Tree saved" },
-        { age: '3-6 months', TinyClo: "2 Tree saved" },
-        { age: '6-9 months', TinyClo: "3 Tree saved" },
-        { age: '9-12 months', TinyClo: "4 Tree saved" },
-        { age: '12-18 months', TinyClo: "5 Tree saved" },
-        { age: '18-24 months', TinyClo: "6 Tree saved" },
+        {age: '0-3 months', TinyClo: "1 Tree Saved + 200L Water Saved" },
+        { age: '3-6 months', TinyClo: "2 Tree Saved + 300L Water Saved" },
+        { age: '6-9 months', TinyClo: "3 Tree Saved + 400L Water Saved" },
+        { age: '9-12 months', TinyClo: "4 Tree Saved + 500L Water Saved" },
+        { age: '12-18 months', TinyClo: "5 Tree Saved + 600L Water Saved" },
+        { age: '18-24 months', TinyClo: "6 Tree Saved + 700L Water Saved" },
     ]
     const spacesavingval = [
-        {age: '0-3 months', TinyClo: "Space saved: Half wardrobe" },
-        { age: '3-6 months', TinyClo: "Space saved: Full Wardrobe" },
-        { age: '6-9 months', TinyClo: "Space saved: Wardrobe and Sofa" },
-        { age: '9-12 months', TinyClo: "Space saved: Half Living room" },
-        { age: '12-18 months', TinyClo: "Space saved: Full Living room" },
-        { age: '18-24 months', TinyClo: "Space saved: Guest room" },
+        {age: '0-3 months', TinyClo: "Half Wardrobe Saved" },
+        { age: '3-6 months', TinyClo: "Full Wardrobe Saved" },
+        { age: '6-9 months', TinyClo: "Wardrobe and Sofa Saved" },
+        { age: '9-12 months', TinyClo: "Half Living Room Saved" },
+        { age: '12-18 months', TinyClo: "Full Living Room Saved" },
+        { age: '18-24 months', TinyClo: "Guest Room Saved" },
     ]
 
     return (
@@ -53,21 +53,21 @@ const Section4 = () => {
             <div className="sec3btn-div">
                 <button 
                     onClick={handleCostSavingClick}
-                    style={{ backgroundColor: selectedButton === "costSaving" ? "#FCEBA3" : "#D9D9D9" }}
+                    style={{ backgroundColor: selectedButton === "costSaving" ? "#FCEBA3" : "#F5F5F6" }}
                 >
-                    Cost Saving
+                    Cost Savings
                 </button>
                 <button 
                     onClick={handleEnvSavingClick}
-                    style={{ backgroundColor: selectedButton === "envSaving" ? "#FCEBA3" : "#D9D9D9" }}
+                    style={{ backgroundColor: selectedButton === "envSaving" ? "#FCEBA3" : "#F5F5F6" }}
                 >
-                    Environment Saving
+                    Environment Savings
                 </button>
                 <button 
                     onClick={handleSpaceSavingClick}
-                    style={{ backgroundColor: selectedButton === "spaceSaving" ? "#FCEBA3" : "#D9D9D9" }}
+                    style={{ backgroundColor: selectedButton === "spaceSaving" ? "#FCEBA3" : "#F5F5F6" }}
                 >
-                    Space Saving
+                    Space Savings
                 </button>
             </div>
             {selectedButton === "costSaving" && 

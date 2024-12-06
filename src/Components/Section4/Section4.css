@@ -14,16 +14,21 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 5rem;
+    gap: 8rem;
 }
 .sec3btn-div button{
     font-size: 2rem;
     padding: 0.85rem;
     background-color: #D9D9D9;
     border: none;
+    box-shadow: 1px 0.5px 10px 2px rgb(0 0 0 / 5%), 0 6px 20px 0 rgba(0, 0, 0, .19);
     cursor: pointer;
     font-weight: 300;
     border-radius: 10px;
+}
+.sec3btn-div button:hover{
+    scale:1.025;
+    transition: all;
 }
 
 .doyouknow{

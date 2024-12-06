@@ -49,8 +49,8 @@ const SliderCompo = ({twobtn,cont,Slidevalue}) => {
       {
         twobtn ? 
       <div className="sec4btn-div">
-        <button>AVERAGE SPENT: {ageGroups[selectedIndex].AverageSpent}</button>
-        <button>TINYCLO: {ageGroups[selectedIndex].TinyClo}</button>
+        <button>Average Spent: {ageGroups[selectedIndex].AverageSpent}</button>
+        <button>TinyClo: {ageGroups[selectedIndex].TinyClo}</button>
       </div>:
       <div className="sec4btn-div">
         <button>{ageGroups[selectedIndex].TinyClo}</button>
