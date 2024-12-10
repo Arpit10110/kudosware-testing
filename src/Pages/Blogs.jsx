@@ -5,7 +5,7 @@ import BlogCard from "../Components/BlogCard/BlogCard.jsx";
 import SignupTopBanner from "../Components/SignupTopBanner/SignupTopBanner.jsx";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import "../Style/Blogs.css";
+import "../Style/Blogs.css"; 
 import Dialog from '@mui/material/Dialog';
 import axios from "axios";
 import Loading from "../Components/Loading/Loading";

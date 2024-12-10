@@ -51,6 +51,22 @@ const Cart = () => {
     });
   };
 
+  useEffect(() => {
+    const cartsec2 = document.getElementById('cartsection2');
+  
+    if (cartsec2) {
+      if (Cart.length > 3) {
+        cartsec2.style.height = '80vh';
+        cartsec2.style.overflowY = 'auto'; // Ensure scrolling is enabled
+      } else {
+        cartsec2.style.height = 'fit-content';
+        cartsec2.style.overflowY = 'hidden'; // Hide scrolling if not needed
+      }
+    }
+  }, [Cart]);
+  
+  
+
   return (
     <>
       <Navbar />
@@ -70,7 +86,7 @@ const Cart = () => {
             </div>
           ) : (
             // If cart is not empty, show the items
-            <div className="cart-section2">
+            <div id='cartsection2' className="cart-section2">
               {Cart.map((i) => (
                 <div className='cart-section2-item' key={i.id}>
                   <div className="cart-item-img">
@@ -80,7 +96,7 @@ const Cart = () => {
                     <h4>{i.title}</h4>
                     {/* Assuming you will dynamically display the size */}
                     <h4>Size: ({i.size ? i.size : 'N/A'})</h4>
-                    <h4>₹{i.price}</h4>
+                    <h4>₹{Math.floor(i.price)}</h4>
                     <div className="cart-controller">
                         <div className="cart-qty">
                         <button onClick={() => increseQty(i.id)} >+</button>
@@ -135,7 +151,7 @@ const Cart = () => {
               <h1>₹{Total}</h1>
             </div>
             {
-              User_id== "" ? <Link to="/login">Login Please</Link>: <Link to="/checkout">Proceed to Checkout</Link>
+              User_id== "" ? <Link to="/login">Proceed</Link>: <Link to="/checkout">Proceed to Checkout</Link>
             }
           </div>
         </div>

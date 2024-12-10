@@ -62,7 +62,7 @@ const Section8 = () => {
           infiniteLoop
           showStatus={false}
           showArrows
-          showIndicators
+          showIndicators 
           showThumbs={false}
           interval={3000}
         >

@@ -41,7 +41,6 @@ const ProfileBox = () => {
             <div className="profilebox-header">
                 <h1>Personal <span>Information</span></h1>
                 <div className='editprofile-div' >
-                <EditIcon className='editprofile-icon' />
                 <Link to="/updatepassword" >Update Password</Link>
                 </div>
             </div>

@@ -21,7 +21,12 @@
     box-shadow: -2px 2px 17px 0px rgb(0 0 0 / 0%), 0 6px 20px 0 rgba(0, 0, 0, .19);
     position: relative;
     border-radius: 1rem;
+    cursor: default;
     height: max-content;
+}
+.sec5box:hover{
+  scale: 1.02;
+  transition: all;
 }
 .sec5Img {
   position: absolute;

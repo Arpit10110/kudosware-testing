@@ -55,8 +55,8 @@ const StoreCard = ({ id, image, title, Buy, Rent,tags }) => {
         </div>
         <h3>{title}</h3>
         {/* Passing Buy and Rent specific details to addtocartHandler */}
-        <button onClick={() => addtocartHandler(Buy)}>Buy Now @{Buy.price} INR</button>
-        <button onClick={() => addtocartHandler(Rent)}>Rent @{Rent.price} INR</button>
+        <button onClick={() => addtocartHandler(Buy)}>Buy Now @{Math.floor(Buy.price)} INR</button>
+        <button onClick={() => addtocartHandler(Rent)}>Rent @{Math.floor(Rent.price)} INR</button>
       </div>
       <ToastContainer
 position="top-right"

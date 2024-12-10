@@ -9,6 +9,10 @@
     text-align: center;
     align-items: center;
 }
+.navtop h3{
+    font-weight: 500;
+    font-size: 1.4rem;
+}
 nav{
     display: flex;
     justify-content: space-between;
@@ -59,11 +63,14 @@ nav{
     color: black;
 }
 .Profile-link .profile-icon{
-    font-size: 2.5rem;
-    background-color: #0000007A;;
+    font-size: 3rem;
     padding: 0.5rem;
-    color: white;
+    color: #0000007A;
     border-radius: 5rem;
+}
+.Profile-link .profile-icon :hover{
+    scale: 1.05;
+    transition: all;
 }
 .cart-link .cart-icon{
     font-size: 2.2rem;
