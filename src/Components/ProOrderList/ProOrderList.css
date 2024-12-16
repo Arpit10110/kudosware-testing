@@ -73,6 +73,12 @@
     gap: 2rem;
     padding: 1rem;
 }
+.order-details-head {
+    font-size: 2.5rem;
+    padding-bottom: 0.8rem;
+    font-weight: 600;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.144);
+}
 .order-deatils1{
     display: flex;
     justify-content: space-between;
@@ -81,6 +87,15 @@
 .order-deatils1 h1{
     color: #EF5326;
     font-weight: 600;
+}
+.order-deatils1 h1::before{
+    content: "OrderId ";
+    color: #147AA9;
+}
+.order-deatils1 h1 span{
+    color: #4d4d4d;
+    font-weight: 600;
+    font-size: 1.5rem;
 }
 .order-deatils1 h2{
     color: #44CF09;
@@ -93,12 +108,28 @@
 }
 .order-deatils2 h2 {
     font-weight: 600;
+    color: #4d4d4d;
     font-size: 1.7rem;
 }
 .order-deatils3 h2{
-    color: #4d4d4d;
+    color: #147AA9;
     font-weight: 600;
     font-size: 1.8rem;
+}
+.order-deatils3 h2 span {
+    color: #35b300;
+    font-weight: 600;
+    font-size: 1.8rem;
+}
+.order-deatils4 h2{
+    color: #EF5326;
+    font-weight: 600;
+    font-size: 1.8rem;
+}
+.order-deatils4 h2 span{
+    color: #4d4d4d;
+    font-weight: 600;
+    font-size: 1.7rem;
 }
 
 

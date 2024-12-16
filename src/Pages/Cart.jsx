@@ -2,6 +2,8 @@ import React,{useEffect} from 'react'
 import Navbar from '../Components/Navbar/Navbar'
 import Footer from '../Components/Footer/Footer'
 import SignupTopBanner from '../Components/SignupTopBanner/SignupTopBanner.jsx'
+import BuyCart from '../Components/BuyCart/BuyCart.jsx'
+import RentalCart from '../Components/RentalCart/RentalCart.jsx'
 import { useSelector,useDispatch } from "react-redux"
 import "../Style/Cart.css"
 import { Link } from 'react-router-dom'
@@ -54,15 +56,15 @@ const Cart = () => {
   useEffect(() => {
     const cartsec2 = document.getElementById('cartsection2');
   
-    if (cartsec2) {
-      if (Cart.length > 3) {
-        cartsec2.style.height = '80vh';
-        cartsec2.style.overflowY = 'auto'; // Ensure scrolling is enabled
-      } else {
-        cartsec2.style.height = 'fit-content';
-        cartsec2.style.overflowY = 'hidden'; // Hide scrolling if not needed
-      }
-    }
+    // if (cartsec2) {
+    //   if (Cart.length > 3) {
+    //     cartsec2.style.height = '80vh';
+    //     cartsec2.style.overflowY = 'auto'; // Ensure scrolling is enabled
+    //   } else {
+    //     cartsec2.style.height = 'fit-content';
+    //     cartsec2.style.overflowY = 'hidden'; // Hide scrolling if not needed
+    //   }
+    // }
   }, [Cart]);
   
   
@@ -87,7 +89,8 @@ const Cart = () => {
           ) : (
             // If cart is not empty, show the items
             <div id='cartsection2' className="cart-section2">
-              {Cart.map((i) => (
+              
+              {/* {Cart.map((i) => (
                 <div className='cart-section2-item' key={i.id}>
                   <div className="cart-item-img">
                     <img src={i.image} alt={i.title} />
@@ -95,7 +98,7 @@ const Cart = () => {
                   <div className="cart-item-cont">
                     <h4>{i.title}</h4>
                     {/* Assuming you will dynamically display the size */}
-                    <h4>Size: ({i.size ? i.size : 'N/A'})</h4>
+                    {/* <h4>Size: ({i.size ? i.size : 'N/A'})</h4>
                     <h4>₹{Math.floor(i.price)}</h4>
                     <div className="cart-controller">
                         <div className="cart-qty">
@@ -107,7 +110,12 @@ const Cart = () => {
                     </div>
                   </div>
                 </div>
-              ))}
+              ))} */} 
+
+              <BuyCart Cart={Cart} increseQty={increseQty} decreaseQty={decreaseQty} deleteItem={deleteItem}/>
+              <RentalCart Cart={Cart} increseQty={increseQty} decreaseQty={decreaseQty} deleteItem={deleteItem}/>
+              
+              
             </div>
           )}
 

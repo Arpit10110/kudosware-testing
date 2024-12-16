@@ -7,6 +7,7 @@ const StoreCard = ({ id, image, title, Buy, Rent,tags }) => {
   const dispatch = useDispatch();
 
   const addtocartHandler = (variant) => {
+    console.log(variant);
 
     const itemTags = tags.split(', ');
     let color = '';
@@ -24,7 +25,8 @@ const StoreCard = ({ id, image, title, Buy, Rent,tags }) => {
        image: image, 
        price: variant.price,
        qty: 1,
-       size:size
+       size:size,
+       variantopt:variant.title
     };
     console.log(data);
     dispatch({
