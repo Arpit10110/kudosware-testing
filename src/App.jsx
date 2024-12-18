@@ -21,6 +21,7 @@ import Success from "./Pages/Success";
 import Choosemembership from "./Pages/Choosemembership.jsx";
 import Blogs from "./Pages/Blogs.jsx";
 import UpadatePassword from "./Pages/UpadatePassword.jsx";
+import Productdetail from "./Pages/Productdetail.jsx";
 //components
 import  {Protected,UnRProtected} from "./Components/protected/Protected.jsx"
 // Style
@@ -54,6 +55,7 @@ const App = () => {
         <Route path="/profile" element={<UnRProtected Component={Profile}/>} />
         <Route path="/updatepassword" element={<UpadatePassword/>} />
         <Route path="/successignup" element={<SuccesSignup/>} />
+        <Route path="/product-detail/:id" element={<Productdetail/>}  />
         <Route path="/store" element={<Store/>}>
           <Route path="/store" element={<AllStore/>} />
           <Route path="/store/boys" element={<BoysStore/>} />

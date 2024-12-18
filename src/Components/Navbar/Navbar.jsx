@@ -36,15 +36,16 @@ const Navbar = () => {
           <NavLink to="/about">About Us</NavLink>
           <NavLink to="/store">Store</NavLink>
           <HashLink to="/#contact">Contact Us</HashLink>
-          <Link to="/cart" className="cart-link">
+        </div>
+        <div className="Last-links">
+        <Link to="/cart" className="cart-link">
             <ShoppingCartIcon className="cart-icon" />
             <span>{Cart.length}</span>
           </Link>
-        </div>
         {User_id == "" ? (
-          <div className="lastnav-link">
-            <Link to="/login">Login/Sign Up</Link>
-          </div>
+          <Link to="/login" className="Profile-link">
+            <PersonIcon className="profile-icon" />
+          </Link>
         ) : (
           <div className="Profile-link" id="Profile-link" >
             <Link to="/profile">
@@ -52,6 +53,7 @@ const Navbar = () => {
             </Link>
           </div>
         )}
+        </div>
         <div className="mobile-links">
           <button
             onClick={() => {

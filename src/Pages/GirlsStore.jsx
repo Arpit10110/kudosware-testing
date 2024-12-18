@@ -77,6 +77,7 @@ const GirlsStore = () => {
                 Rent={item.variants[0]}
                 Buy={item.variants[1]}
                 tags={item.tags}
+                prodetail={item}
               />
             ))
           }

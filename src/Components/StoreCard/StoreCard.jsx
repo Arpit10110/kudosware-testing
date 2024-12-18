@@ -3,7 +3,9 @@ import "./StoreCard.css";
 import { useDispatch } from "react-redux";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
-const StoreCard = ({ id, image, title, Buy, Rent,tags }) => {
+import { useNavigate } from 'react-router-dom';
+const StoreCard = ({ id, image, title, Buy, Rent,tags,prodetail }) => {
+  const navigate= useNavigate();
   const dispatch = useDispatch();
 
   const addtocartHandler = (variant) => {
@@ -49,9 +51,13 @@ const StoreCard = ({ id, image, title, Buy, Rent,tags }) => {
       });
  };
 
+ const navtoproduct = ()=>{
+    navigate(`/product-detail/:id${id}`);
+ }
+
   return (
     <>
-      <div className="store-card">
+      <div onClick={navtoproduct}  className="store-card">
         <div className='store-card-image' >
         <img  src={image} alt={title} />
         </div>
