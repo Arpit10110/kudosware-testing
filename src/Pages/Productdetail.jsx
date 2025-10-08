@@ -8,6 +8,7 @@ import Loading from '../Components/Loading/Loading';
 import { useDispatch } from 'react-redux';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
+
 const Productdetail = () => {
     const { id } = useParams(); 
     const actualId = id.slice(3,) 

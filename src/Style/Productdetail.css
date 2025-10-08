@@ -66,6 +66,7 @@
 .Prod-detail-addtocart :nth-child(2){
     background-color: #FCEBA3 !important;
     color: black !important;;
+<<<<<<< HEAD
 }
 
 
@@ -87,4 +88,6 @@
     .Prod-detail-cont {
         width: 100%;
     }
+=======
+>>>>>>> fe1145c5e3a982e211d29d4e44cf16805ff3347a
 }
