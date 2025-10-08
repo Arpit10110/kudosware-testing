@@ -1,0 +1,46 @@
+.signup-div-main{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.signup-div-input{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 48%;
+}
+.signup-div-input h3{
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+.login-div-input h3 span{
+  color: red;
+}
+.signup-div-input input{
+    padding: 0.4rem;
+    font-size: 2rem;
+    font-weight: 300;
+}
+.signup-div-btn{
+    display: flex ;
+    margin-top: 2.5rem;
+    flex-direction: row ;
+    gap: 3rem ;
+    align-items: center;
+}
+.signup-div-btn a{
+    font-size: 1.7rem;
+    color: #3A4453;
+}
+.signup-div-btn :nth-child(1) {
+    background-color: #147AA9;
+    color: white;
+    padding: 1rem;
+    padding-left: 2rem;
+    border-radius: 8px;
+    padding-right: 2rem;
+    font-size: 1.7rem;
+    border: none;
+    cursor: pointer;
+    width: fit-content;
+}

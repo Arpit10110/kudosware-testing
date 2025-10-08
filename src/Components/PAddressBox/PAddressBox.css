@@ -1,0 +1,39 @@
+.add-icon{
+    font-size: 2.5rem !important;
+    color: #147AA9 !important;
+    cursor: pointer;
+}
+.shiipping-deatils{
+    display: flex;
+    padding: 1rem;
+    justify-content: space-between;
+    align-items: center;
+}
+.shipingbox {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    background-color: #0000000f;
+    padding: 1rem;
+    border-radius: 1rem;
+    gap: 1rem;
+}
+.shipingbox h1{
+    font-size: 2rem;
+    font-weight: 500;
+}
+.shipingbox p{
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+.no-saved-add{
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.no-saved-add h1 {
+    font-weight: 600;
+    font-size: 2.5rem;
+    color: #147AA9;
+}

@@ -1,0 +1,14 @@
+.Loading-div{
+    /* height: 80vh; */
+    display: flex;
+    width: inherit;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+}
+.Loading-div div{
+    width: 20%;
+}
+.Loading-div img{
+   width: 100%;
+}

@@ -1,0 +1,144 @@
+.navtop{
+    background-color:#FC6565;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    text-align: center;
+    align-items: center;
+}
+.navtop h3{
+    font-weight: 500;
+    font-size: 1.4rem;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 5rem;
+    height: 15vh;
+    padding-right: 5rem;
+}
+.logo{
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo img{
+    width: 65%;
+    cursor: pointer;
+}
+.midlenav-links{
+    gap: 3rem;
+    display: flex;
+    font-size: 1.5rem;
+    align-items: center;
+    justify-content: center;
+}
+.midlenav-links a{
+    color: #0000007A;
+}
+.active{
+    background-color: #FCEBA3;
+    padding: 0.7rem;
+    border-radius: 3rem;
+    padding-left: 1rem;
+    color: black;
+    padding-right: 1rem;
+}
+.lastnav-link{
+   
+    background-color: #FCEBA3;
+    padding: 1rem;
+    color: white;
+}
+.midlenav-links a:hover{
+    scale: 1.05;
+    transition: all;
+}
+.lastnav-link a{
+    color: black;
+}
+.Profile-link .profile-icon{
+    font-size: 3rem;
+    padding: 0.5rem;
+    color: #0000007A;
+    border-radius: 5rem;
+}
+.Profile-link .profile-icon :hover{
+    scale: 1.05;
+    transition: all;
+}
+.Last-links{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    font-size: 1.2rem;
+}
+.Last-links a span{
+    color: #0000007A;
+    font-weight: 500;
+}
+.cart-link .cart-icon{
+    font-size: 2.2rem;
+    color: #0000007A;
+}
+.mobile-links{
+    display: none;
+}
+@media only   screen and (width<=600px){
+    .Last-links{
+        display: none;
+    }
+    .mobile-links{
+        display: inline;
+    }
+    .midlenav-links{
+        display: none;
+    }
+    .lastnav-link{
+        display: none;
+    }
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 1rem;
+        height: 10vh;
+        padding-right: 1rem;
+    }
+    .logo {
+        width: 15%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .logo img{
+        width: 100%;
+    }
+    .all-links {
+        display: flex;
+        flex-direction: column;
+        padding: 2rem;
+        gap: 4rem;
+        font-size: 2rem;
+        justify-content: center;
+        height: 80vh;
+    }
+    .all-links a{
+        color: black;
+    }
+    .mobile-links button{
+        background-color: transparent;
+        border: none;
+    }
+    .MenuIcon{
+        font-size: 3.5rem !important;
+    }
+    #Profile-link{
+        display: none;
+    }
+}

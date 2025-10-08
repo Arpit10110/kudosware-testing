@@ -1,0 +1,106 @@
+.section4{
+    padding-bottom: 10rem;
+    padding-top: 3rem;
+}
+.section4 h2 {
+    margin-left: 5rem;
+    font-size: 4rem;
+    font-weight: 400;
+    border-bottom: 4px solid #EBB5BB;
+    width: fit-content;
+    border-radius: 1px;
+}
+.sec3btn-div{
+    margin-top: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+}
+.sec3btn-div button{
+    font-size: 2rem;
+    padding: 0.85rem;
+    background-color: #D9D9D9;
+    border: none;
+    box-shadow: 1px 0.5px 10px 2px rgb(0 0 0 / 5%), 0 6px 20px 0 rgba(0, 0, 0, .19);
+    cursor: pointer;
+    font-weight: 300;
+    border-radius: 10px;
+}
+.sec3btn-div button:hover{
+    scale:1.025;
+    transition: all;
+}
+
+.doyouknow{
+    background-color: #FFFFFF;
+    width: 80%;
+    margin: auto;
+    border-radius: 2rem;
+    margin-top: 8rem;
+}
+.sec4-cont {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3.5rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+.sec4-cont h3{
+    font-size: 3rem;
+    color: #27B09E;
+}
+.sec4-cont p{
+    width: 75%;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+.sec4-cont img {
+    width: 100%;
+}
+.sec4btn-div {
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10rem;
+}
+.sec4btn-div button{
+    background-color: #27B09ECC;
+    color: white;
+    padding: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    border-radius: 10px;
+    border: none;
+    font-size: 2rem;
+}
+.sec4btn-div :nth-child(2){
+    background-color: #E5635FCC;
+}
+
+
+@media only screen and (width<=600px){
+    .section4 h2 {
+        margin-left: 3rem;
+    }
+    .sec3btn-div {
+        margin-top: 5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }
+    .sec3btn-div button {
+        font-size: 1.8rem;
+    }
+
+    .sec4-cont p {
+        width: 100%;
+    }
+  
+}

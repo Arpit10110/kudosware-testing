@@ -1,0 +1,29 @@
+.blogcard {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    background-color: #00000008;
+    padding: 2rem;
+    border-radius: 1rem;
+    gap: 2rem;
+}
+.blogcard img{
+    width: 100%;
+}
+.blogcard h2{
+    font-size: 2rem;
+    font-weight: 500;
+}
+.blogcard p{
+    font-size: 1.7rem;
+    font-weight: 400;
+}
+.blogcard h4{
+    font-size: 1.5rem;
+}
+
+@media only  screen and (width<=600px) {
+    .blogcard{
+        width: 85%;
+    }
+}

@@ -1,0 +1,84 @@
+.section6 {
+  padding-bottom: 10rem;
+}
+.section6 h2 {
+  margin-left: 5rem;
+  font-size: 4rem;
+  font-weight: 400;
+  border-bottom: 4px solid #ebb5bb;
+  width: fit-content;
+  border-radius: 1px;
+}
+.section6-div {
+  display: flex;
+  margin-top: 3rem;
+  justify-content: space-around;
+}
+.sec6-cont {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  padding-top: 4rem;
+}
+.sec6-para {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  font-size: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+.sec6-para p {
+  font-weight: 400;
+  text-align: justify;
+  font-size: 2.1rem;
+}
+.sec6-btn {
+  display: flex;
+  justify-content: center;
+}
+
+.sec6-btn button {
+  background-color: #147aa9;
+  color: white;
+  cursor: pointer;
+  box-shadow: -2px 2px 8px 4px rgb(0 0 0 / 13%), 0 6px 20px 0 rgba(0, 0, 0, .19);
+  border: none;
+  border-radius: 8px;
+  padding: 1rem 2rem 1rem 2rem;
+  font-size: 2rem;
+}
+.sec6-btn button:hover{
+    scale: 1.02;
+    transition: all;
+}
+.sec6Img {
+  width: 35%;
+}
+.sec6Img img {
+  width: 100%;
+  mix-blend-mode: darken;
+}
+
+@media only screen and (width<=600px) {
+  .section6 h2 {
+    margin-left: 3rem;
+  }
+  .section6-div {
+    margin-top: 5rem;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  .sec6-cont {
+    width: 90%;
+    gap: 4rem;
+    padding-top: 0rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  .sec6Img {
+    width: 90%;
+  }
+}

@@ -1,0 +1,112 @@
+.checkout-main {
+  padding: 3rem 0rem 10rem 0rem;
+}
+.checkout-head {
+  font-size: 4rem;
+  padding-left: 3rem;
+  width: fit-content;
+  color: #147aa9;
+}
+.checkout-head span {
+  color: #fc6565;
+}
+.inner-checkout-div {
+  display: flex;
+  justify-content: space-between;
+  padding: 0rem 2rem 0rem 2rem;
+}
+.checkout-address {
+  width: 55%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 3rem;
+  border-top: 2px solid #0808082e;
+}
+.address-btn-checkout {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.address-btn-checkout button {
+  padding: 1rem 2rem 1rem 2rem;
+  font-size: 1.7rem;
+  background-color: #fceba3;
+  border: none;
+  cursor: pointer;
+}
+.address-btn-checkout :nth-child(2) {
+  background-color: #3a4453;
+  color: white;
+}
+.loading-checkout {
+  width: 70%;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}
+.saved-addresses {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 60%;
+}
+.Saved-address p {
+  width: 100%;
+  font-size: 2rem;
+  border: 2px solid #0000002e;
+  text-align: center;
+  padding: 1rem;
+  background-color: #80808029;
+  border-radius: 1rem;
+}
+
+.checkout-add-address {
+  width: 100%;
+}
+
+.saved-address {
+  padding: 1rem;
+  font-size: 1.8rem;
+  cursor: pointer;
+  display: flex;
+  gap: 0.5rem;
+  border-radius: 1rem;
+}
+.selected {
+  padding: 1rem;
+  font-size: 1.8rem;
+  display: flex;
+  cursor: pointer;
+  gap: 0.5rem;
+  border-radius: 1rem;
+}
+
+.pay-btn-checkout {
+  background-color: #3a4453 !important;
+  margin-top: 0ren !important;
+}
+
+.saved-addresses h1{
+  font-weight: 600;
+  font-size: 2.5rem;
+  color: #147AA9;
+}
+
+@media only screen and (width<=600px) {
+  .inner-checkout-div {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0rem 1rem 0rem 1rem;
+  }
+  .checkout-address {
+    width: 100%;
+  }
+  .checkout-add-address {
+    width: 90%;
+    margin-top: 2rem;
+  }
+}
